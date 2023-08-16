@@ -123,14 +123,18 @@ body {
 
 /* Footer */
 footer {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.9em;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 0.5s, transform 0.5s;
+    animation: fadeIn 1s forwards 0.5s;
+  }
 
 /* Test responsive home.html*/
 /* Pour tablettes */
