@@ -42,21 +42,24 @@ nav img {
 
 
   .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      height: 80vh;
-  }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding: 20px;
+    height: 75vh;
+}
   
   /* Présentation */
   .presentationSite {
       max-width: 50%;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .presentationSite h1 {
+  .presentationSite h2 {
       margin-top: 0;
       font-size: 2em;
       font-weight: bold;
@@ -87,9 +90,11 @@ nav img {
   
   /* Styles pour l'image */
   .imgHome {
-      max-width: 40%;
+      max-width: 50%;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .imgHome img {
@@ -125,7 +130,8 @@ footer {
 
 /* Pour mobile */
 @media only screen and (max-width: 480px) {
-    .container {width: 100%;}
+    .container {width: 100%;
+        flex-direction: column-reverse;}
     nav {
       flex-direction: column; 
       align-items: start;

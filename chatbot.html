@@ -6,6 +6,7 @@
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="public/css/chatbotStyles.css">
     <title>Chatbot</title>
 </head>
@@ -18,11 +19,12 @@
        <div class="container">
     <div class="chat-container">
         <div class="response-area" id="responseArea">
-            <!-- Les messages du chatbot apparaîtront ici -->
+            <!-- Les réponses ici -->
         </div>
         <div class="input-area">
             <input type="text" id="userInput" placeholder="Tapez votre message...">
-            <button id="sendButton">Envoyer</button>
+            <!-- Icon envoyer -->
+            <button id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
         </div>
     </div>
 </div>
