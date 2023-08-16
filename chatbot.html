@@ -6,13 +6,33 @@
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
     </script>
+    <link rel="stylesheet" href="public/css/chatbotStyles.css">
     <title>Chatbot</title>
 </head>
 <body onload="brython()">
-    <h1>Page chatbot</h1>
+    <nav>
+        <!-- Logo -->
+        <a href="home.html"><img src="public/assets/picto_rose.PNG" alt=""></a>
+      </nav>
+       <!-- Container principal de la page -->
+       <div class="container">
+    <div class="chat-container">
+        <div class="response-area" id="responseArea">
+            <!-- Les messages du chatbot apparaîtront ici -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Tapez votre message...">
+            <button id="sendButton">Envoyer</button>
+        </div>
+    </div>
+</div>
 
-    <input id="zone"><button id="mybutton">click !</button>
-    <script type="text/python" src="/app/test.py"></script>
+    <footer>ChatBot2023&copy; LSS&Hiloul <br>Tout droits réservés.</footer>
+
+    <script defer type="text/python" src="/app/test.py"></script>
 </body>
 
 </html>
+
+
+

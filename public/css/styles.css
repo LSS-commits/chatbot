@@ -69,16 +69,18 @@ nav img {
       font-family:'Montserra', sans-serif;
   }
   
-  .presentationSite button {
+  .presentationSite a {
       border-radius: 25px;
       padding: 10px 20px;
       border: none;
       cursor: pointer;
       background-color: var(--secondary-color);
       transition: 0.3s ease;
+      text-decoration: none;
+      color: #171717;
   }
   
-  .presentationSite button:hover {
+  .presentationSite a:hover {
       opacity: 0.8;
       font-weight: 600;
   }
@@ -107,7 +109,7 @@ footer {
     position: relative;
 }
 
-/* Test responsive */
+/* Test responsive home.html*/
 /* Pour tablettes */
 @media (min-width: 768px) and (max-width: 1023px) {
     .container {
