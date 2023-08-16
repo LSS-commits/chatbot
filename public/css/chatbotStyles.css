@@ -40,6 +40,18 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .chat-container, .response-area {
+    animation: fadeIn 1s ease-in-out;
+  }
 .container {
   display: flex;
   justify-content: center;
