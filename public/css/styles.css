@@ -112,9 +112,9 @@ footer {
 /* Test responsive home.html*/
 /* Pour tablettes */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .container {
-        padding: 40px;
-    }
+    .container {width: 90%;}
+    nav img {max-width: 70px;}
+    nav a {margin-right: 10px;}
     .presentationSite, .imgHome {
         max-width: 45%;
     }
@@ -124,11 +124,16 @@ footer {
 }
 
 /* Pour mobile */
-@media (max-width: 767px) {
-    .container {
-        flex-direction: column-reverse;
+@media only screen and (max-width: 480px) {
+    .container {width: 100%;}
+    nav {
+      flex-direction: column; 
+      align-items: start;
+      padding: 5px 10px;
     }
-    .presentationSite, .imgHome {
-        max-width: 100%;
-    }
+    nav img {
+    max-width: 60px; 
+    margin-bottom: 10px;}
+    nav a {margin-right: 5px;}
+    .presentationSite, .imgHome {max-width: 100%;}
 }
