@@ -87,7 +87,8 @@ nav img {
 }
 
 .input-area button:hover {
-    background-color: #0056b3;
+        opacity: 0.8;
+        font-weight: 600;
 }
 
 
