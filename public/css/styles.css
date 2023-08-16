@@ -40,7 +40,6 @@ nav img {
     font-family: 'Montserrat', sans-serif;    
   }
 
-
   .container {
     display: flex;
     justify-content: space-around;
@@ -73,7 +72,10 @@ nav img {
   }
   
   .presentationSite a {
-      border-radius: 25px;
+      display: flex;
+      justify-content: center;
+      margin: 0px 50px 0px 50px;
+      border-radius: 20px;
       padding: 10px 20px;
       border: none;
       cursor: pointer;
