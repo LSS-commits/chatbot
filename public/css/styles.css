@@ -1,147 +1,161 @@
 :root {
-    --background-color: #ededed;
-    --text-color: #171717;
-    --primary-color: #cfcfcf; /* couleur principale, utilisée pour les éléments en arrière-plan comme le header */
-    --secondary-color: #e277cd; /* couleur secondaire, utilisée pour les éléments cliquables comme les boutons */
-  }
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
-  
-  * {
-    user-select: none;
-  }
-  
+  --background-color: #ededed;
+  --text-color: #171717;
+  --primary-color: #cfcfcf; /* couleur principale, utilisée pour les éléments en arrière-plan comme le header */
+  --secondary-color: #e277cd; /* couleur secondaire, utilisée pour les éléments cliquables comme les boutons */
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
+
+* {
+  user-select: none;
+}
+
 /* NavBar */
 nav {
-    background-color: var(--primary-color);
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: start;
-    align-items: center;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 
 nav a {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 nav img {
-    max-width: 90px;
-    border-radius: 25px;
-    height: auto;
-    display: block;
+  max-width: 90px;
+  border-radius: 25px;
+  height: auto;
+  display: block;
 }
 
-  /* Général */
-  body {
-    margin: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Montserrat', sans-serif;    
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column-reverse;
-    padding: 20px;
-    height: 75vh;
+/* Général */
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Montserrat", sans-serif;
 }
-  
-  /* Présentation */
-  .presentationSite {
-      max-width: 50%;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-  }
-  
-  .presentationSite h2 {
-      margin-top: 0;
-      font-size: 2em;
-      font-weight: bold;
-  }
-  
-  .presentationSite p {
-      margin-bottom: 20px;
-      font-size: 1em;
-      line-height: 1.5;
-      font-family:'Montserra', sans-serif;
-  }
-  
-  .presentationSite a {
-      display: flex;
-      justify-content: center;
-      margin: 0px 50px 0px 50px;
-      border-radius: 20px;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      background-color: var(--secondary-color);
-      transition: 0.3s ease;
-      text-decoration: none;
-      color: #171717;
-  }
-  
-  .presentationSite a:hover {
-      opacity: 0.8;
-      font-weight: 600;
-  }
-  
-  /* Styles pour l'image */
-  .imgHome {
-      max-width: 50%;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .imgHome img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-  }
-  
-  /* Footer */
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse;
+  padding: 20px;
+  height: 75vh;
+}
+
+/* Présentation */
+.presentationSite {
+  max-width: 50%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.presentationSite h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.presentationSite p {
+text-align: justify;
+  margin-bottom: 20px;
+  font-size: 1em;
+  line-height: 1.3;
+  font-family: "Montserra", sans-serif;
+}
+
+.presentationSite a {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: #171717;
+}
+
+.presentationSite a:hover {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+/* Styles pour l'image */
+.imgHome {
+  max-width: 50%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imgHome img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.9em;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 /* Test responsive home.html*/
 /* Pour tablettes */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .container {width: 90%;}
-    nav img {max-width: 70px;}
-    nav a {margin-right: 10px;}
-    .presentationSite, .imgHome {
-        max-width: 45%;
-    }
-    .presentationSite h1 {
-        font-size: 2.5em;
-    }
+  .container {
+    width: 90%;
+  }
+  nav img {
+    max-width: 70px;
+  }
+  nav a {
+    margin-right: 10px;
+  }
+  .presentationSite,
+  .imgHome {
+    max-width: 45%;
+  }
+  .presentationSite h1 {
+    font-size: 2.5em;
+  }
 }
 
 /* Pour mobile */
 @media only screen and (max-width: 480px) {
-    .container {width: 100%;
-        flex-direction: column-reverse;}
-    nav {
-      flex-direction: column; 
-      align-items: start;
-      padding: 5px 10px;
-    }
-    nav img {
-    max-width: 60px; 
-    margin-bottom: 10px;}
-    nav a {margin-right: 5px;}
-    .presentationSite, .imgHome {max-width: 100%;}
+  .container {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  nav {
+    flex-direction: column;
+    align-items: start;
+    padding: 5px 10px;
+  }
+  nav img {
+    max-width: 60px;
+    margin-bottom: 10px;
+  }
+  nav a {
+    margin-right: 5px;
+  }
+  .presentationSite,
+  .imgHome {
+    max-width: 100%;
+  }
 }
