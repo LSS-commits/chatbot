@@ -1,4 +1,4 @@
-/* Pour écupérer des données d'une API en utilisant Fetch API */
+/* Pour récupérer des données d'une API en utilisant Fetch API */
 async function getData(url = "") {
 
     const response = await fetch(url, {

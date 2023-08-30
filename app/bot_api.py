@@ -1,5 +1,4 @@
 # CONNEXION A L'API
-
 import openai
 
 # pour utiliser les variables d'environnement
