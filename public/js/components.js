@@ -20,5 +20,38 @@ class MyFooter extends HTMLElement {
         `;
     }
 }
+
+class MyNav extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <header>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/public/assets/picto_rose.png" alt="logo chatbot" class="nav-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                        <li class="nav-item">
+                            <i class="fa-solid fa-circle-half-stroke"></i>
+                        </li>
+                        <li class="nav-item">
+                            <i class="fa-solid fa-robot"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        `;
+    }
+}
       
 customElements.define('my-footer', MyFooter);
+
+customElements.define('my-nav', MyNav);
