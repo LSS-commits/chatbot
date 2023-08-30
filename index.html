@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython.min.js"
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython.min.js"
         integrity="sha512-TePPQo/MPAgO0wpr1hlTTf2zBb+JytEf5k6iikBl10TmozMNHpWTdxA50HMaW1fOmoiw9OaNsL2D2PO7pARP6w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- ICONES -->
@@ -17,29 +16,37 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/css/styles.css">
     <link rel="stylesheet" href="/public/css/responsive.css">
-
-    <title></title>
+    <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="/public/assets/picto_rose.PNG">
-
+    <title>Accueil</title>
 </head>
 
 <body>
 
-    <my-nav></my-nav>
-
     <main>
-
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="/public/assets/image_horizontal_noir_rose.png" class="d-block mx-lg-auto img-fluid rounded" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 start-btn">Commencer</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </main>
 
-    <footer></footer>
+    <my-footer></my-footer>
 
-
-
-    <!-- SCRIPTS -->
+    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-    <script src="/public/js/scripts.js"></script>
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
     <script src="/public/js/components.js"></script>
 </body>
 

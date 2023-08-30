@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+
 openai.api_key = os.getenv('API_KEY')
 
 # Role help to distinguish the different speaker's role
@@ -28,6 +29,6 @@ while True:
     reply = chat.choices[0].message.content
     print(f"Chatbot : {reply}")
     messages.append(
-       {'role':'assistant', 'content': reply}, 
+        {'role':'assistant', 'content': reply}, 
     )
 

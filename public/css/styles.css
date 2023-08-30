@@ -15,8 +15,14 @@ h1, h2, h3, h4, h5, h6, a {
     font-family: 'Montserrat', sans-serif
 }
 
-/* BARRE DE NAVIGATION */
+/* PAGE D'ACCUEIL */
+.start-btn {
+    background-color: var(--text-black) !important;
+    border: none;
+    color: var(--pink);
+}
 
+/* BARRE DE NAVIGATION */
 /* logo et bouton toggle restent alignés sur tous les écrans */
 .nav-logo {
     min-width: 50px;
@@ -29,7 +35,6 @@ h1, h2, h3, h4, h5, h6, a {
     background-color: var(--pink);
     color: var(--text-black)
 }
-
 
 .nav-item {
     font-size: 2rem;
