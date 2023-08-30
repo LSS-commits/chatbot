@@ -1,6 +1,15 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
 import openai
-import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Load API key from environment variable
+openai.api_key = os.getenv('API_KEY')
+if not openai.api_key:
+    raise ValueError("No OpenAI API key found. Ensure you've set it in your environment variables.")
 
 # Configuration et initialisation de l'application Flask
 app = Flask(__name__)
@@ -9,13 +18,12 @@ app = Flask(__name__)
 def index():
     return render_template('home.html')
 
-@app.route('/chatbot')
-def chatbot():
+@app.route('/chatbot', methods=['GET'])
+def chatbot_endpoint():
     return render_template('chatbot.html')
 
-
-@app.route('/get_response', methods=['POST'])
-def get_response():
+@app.route('/get_chatbot_response', methods=['POST'])
+def get_chatbot_response():
     user_message = request.json.get('message', '')
     
     messages = [
@@ -30,10 +38,14 @@ def get_response():
         )
         chatGPT_response = response.choices[0].message['content']
         return jsonify({"response": chatGPT_response})
-    
+
+    except openai.error.OpenAIError as oaie:
+        print("OpenAI error:", oaie)  # Detailed error from OpenAI
+        return jsonify({"response": "There was an error processing your request. Please try again later."}), 500
+
     except Exception as e:
-        print("Error:", str(e))  # Log the error in the terminal
-        return jsonify({"response": f"Error: {str(e)}"}), 500
+        print("General error:", str(e))  # General error
+        return jsonify({"response": "An unexpected error occurred. Please try again later."}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
