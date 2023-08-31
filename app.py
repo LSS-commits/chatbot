@@ -15,7 +15,7 @@ openai.api_key = os.getenv('API_KEY')
 app = Flask(__name__)
 
 # Routes
-# URL pricipale
+# # définition de la route d'affichage de l'URL principale
 @app.route('/', methods=["GET"])
 def index():
     return render_template('index.html')
