@@ -5,7 +5,7 @@ function sendMessage() {
     document.getElementById('userInput').value = '';
     document.getElementById('chatbox').innerHTML += '<p><strong>Utilisateur:</strong> ' + message + '</p>';
 
-    // récupérer la réponse de l'API depuis l'endpoint et l'afficher
+    /* envoyer les données du formulaire à la route Flask */
     fetch('/postData', {
         method: 'POST',
         headers: {
@@ -13,6 +13,7 @@ function sendMessage() {
         },
         body: JSON.stringify({ message: message })
     })
+    /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
     .then(response => response.json())
     .then(data => {
         document.getElementById('chatbox').innerHTML += '<p><strong>Chatbot:</strong> ' + data.message + '</p>';    

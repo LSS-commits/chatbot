@@ -30,22 +30,33 @@ def index():
 # def test(text):
 #     return render_template('chatbot.html', txt=text)
 
-# définition de la route pour le point de terminaison du chatbot où les demandes POST seront envoyées
+# définition de la route pour le point de terminaison du chatbot où les demandes POST seront envoyées (soumission du formulaire)
 @app.route('/postData', methods=["POST"])
 def postData():
+    # entrée de l'utilisateur
     data = request.get_json()
-    message = data['message']
-    response = openai.Completion.create(
-        engine='text-davinci-003',
-        prompt=message,
-        max_tokens=50,
-        n=1,
-        stop=None,
-        temperature=0.7
+    userMessage = data['message']
+
+    messages = [ {'role': 'system', 'content': 'You are inteligent assistant'}]
+
+    if userMessage:
+        messages.append(
+            {'role': 'user', 'content': userMessage},
+        )
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", 
+            messages=messages,
+            temperature=0.7
+        )
+
+    # réponse de l'API
+    reply = response.choices[0].message.content
+    messages.append(
+        {'role': 'assistant', 'content': reply},
     )
-    # TODO: comprendre pourquoi la réponse est tronquée
-    reply = response.choices[0].text.strip()
-    return {'message': reply}
+    # retourner le message au client (navigateur) pour l'afficher
+    return { 'message': reply }
+
 
 # définition de la route d'affichage de l'interface du chatbot
 @app.route('/chatbot')
