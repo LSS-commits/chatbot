@@ -3,7 +3,7 @@ class MyNav extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <header>
-            <nav class="navbar navbar-expand-lg bg-dark">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
                         <img src="/static/assets/picto_rose.png" alt="logo chatbot navbar" class="nav-logo">
@@ -51,18 +51,16 @@ class MyFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                        <img src="/static/assets/picto_rose.png" alt="logo chatbot footer" width="30" height="24" class="rounded">
-                    </a>
-                    <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Chatbot by LSS&Hiloul | Tous droits réservés.</span>
-                </div>
-
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-discord"></i></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-github"></i></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <footer class="py-3 mt-4 mb-2">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-decoration-none lh-1 footerLogo">
+                    <img src="/static/assets/picto_rose.png" alt="logo chatbot footer" width="30" height="24" class="rounded">
+                </a>
+                <span class="mb-3 mb-md-0">©2023 Chatbot by LSS&Hiloul - Tous droits réservés.</span>
+                
+                <ul class="mb-3 mb-md-0">
+                    <li><a class=" href="#"><i class="fa-brands fa-discord"></i></a></li>
+                    <li><a class=" href="#"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a class=" href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                 </ul>
             </footer>
         </div>

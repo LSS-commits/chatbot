@@ -1,2 +1,30 @@
 /* MEDIA QUERIES */
 
+@media screen and (max-width: 768px) {
+    /* page d'accueil : image de présentation prend la même largeur que le texte sur les petits écrans */
+    .presentationImgContainer {
+        flex: 1
+    }
+}
+
+@media screen and (max-width: 568px) {
+    /* footer : centrer tous les éléments en colonne */
+    footer {
+        flex-direction: column
+    }
+    .footerLogo {
+       margin-right: 0 !important
+    }
+    footer span {
+        margin-top: 5px;
+        text-align: center
+    }
+    footer ul {
+        margin-left: 0;
+        padding: 0;
+        text-align: center
+    }
+    footer ul li {
+        margin: 0 10px 0 10px !important
+    }
+}
