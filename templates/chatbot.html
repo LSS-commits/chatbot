@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../static/assets/picto_rose.png">
+
     <!-- ICONES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- STYLES -->
+    <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/styles.css">
-    <link rel="stylesheet" href="../static/responsive.css">
-    <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="../static/picto_rose.PNG">
-    <title>Chatbot</title>
+    <!-- CUSTOM STYLES -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
 </head>
+
 <body>
-    
+
+    <!-- Composant barre de navigation -->
     <my-nav></my-nav>
-    
+
+    <!-- Container principal de la page -->
+
     <main>
+        <!-- Chatbot -->
         <h1>Chatbot</h1>
         <div id="chatbox"></div>
         <input type="text" id="userInput" placeholder="Tapez votre message ici...">
         <button onclick="sendMessage()">Envoyer</button>
     </main>
 
+    <!-- Composant footer -->
     <my-footer></my-footer>
 
     <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 
     <!-- SCRIPTS -->
-    <!-- COMPONENTS.JS AVANT SCRIPTS.JS POUR EXECUTER LE JS DANS LES COMPOSANTS !!! -->
-    <script src="../static/components.js"></script>
-    <script src="../static/scripts.js"></script>
-    <script src="../static/chat.js"></script>
+    <!-- WEBCOMPONENTS.JS AVANT LES AUTRES SCRIPTS PERSO POUR EXECUTER LE JS DANS LES COMPOSANTS !!! -->
+    <script src="../static/js/webcomponents.js"></script>
+    <script src="../static/js/chat_api.js"></script>
+    <script src="../static/js/misc_api.js"></script>
 </body>
 
 </html>

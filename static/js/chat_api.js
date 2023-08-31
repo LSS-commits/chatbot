@@ -1,3 +1,4 @@
+/* Pour gérer le traitement des données envoyées et reçues du chatbot */
 function sendMessage() {
     // récupérer l'entrée utilisateur et l'afficher
     var message = document.getElementById('userInput').value;

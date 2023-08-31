@@ -7,6 +7,10 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+# pour ouvrir le navigateur
+import webbrowser
+from threading import Timer
+
 # configuration de la clé d'API
 openai.api_key = os.getenv('API_KEY')
 
@@ -48,7 +52,14 @@ def postData():
 def chatbot():
     return render_template('chatbot.html')
     
+# ouvrir le navigateur lorsque le serveur est lancé
+def open_browser():
+    webbrowser.open_new("http://127.0.0.1:5000")
+
 # démarrer l'app
 if __name__ == '__main__':
+    # ouvrir le navig après 1 seconde
+    Timer(1, open_browser).start()
+
     # définir host et port si besoin
     app.run()
