@@ -1,24 +1,27 @@
 function sendMessage() {
     let userInput = document.getElementById("userInput").value;
 
-    if (userInput.trim() === "") {
-        alert("Veuillez saisir un message.");
-        return;
-    }
+    // if (userInput.trim() === "") {
+    //     alert("Veuillez saisir un message.");
+    //     return;
+    // }
 
-    fetch("/chatbot", {
+    fetch("/get_chatbot_response", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ message: userInput }),
     })
+        
     .then(response => {
         if (!response.ok) {
+            console.error("Network response was not ok. Status:", response.status);
             throw new Error("La réponse du réseau n'était pas ok.");
         }
         return response.json();
     })
+    
     .then(data => {
         let responseArea = document.getElementById("responseArea");
 
@@ -39,7 +42,6 @@ function sendMessage() {
         responseArea.scrollTop = responseArea.scrollHeight;
     })
     .catch(error => {
-        console.error("Il y avait un problème avec l'opération fetch:", error.message);
-        alert("Il y a eu un problème pour obtenir une réponse. Veuillez réessayer.");
+        console.error("Il y a un problème avec l'opération fetch:", error.message);
     });
 }

@@ -9,9 +9,8 @@ load_dotenv()
 # Load API key from environment variable
 openai.api_key = os.getenv('API_KEY')
 if not openai.api_key:
-    raise ValueError("No OpenAI API key found. Ensure you've set it in your environment variables.")
+    raise ValueError("No OpenAI API key found. Ensure you've set it in your environment variables or in a .env file.")
 
-# Configuration et initialisation de l'application Flask
 app = Flask(__name__)
 
 @app.route('/')
