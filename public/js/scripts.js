@@ -8,12 +8,26 @@ async function getData(url = "") {
     return response.json();
 }
   
-// API pour générer des blagues aléatoirement
+const modalBodyJoke = document.getElementById("modalBodyJoke");
+const modalBodyAdvice = document.getElementById("modalBodyAdvice");
+
+// API pour générer des blagues aléatoirement (anglais)
 getData("https://official-joke-api.appspot.com/random_joke").then(data => {
-    console.log(data);
+    // TODO: ajouter des try catch pour gérer les erreurs de fetch
+    data = Object.values(data);
+    // console.log("Random joke: " + data[1] + " " + data[2]);
+    if (modalBodyJoke) {
+        modalBodyJoke.innerHTML = "Juste pour rire : " + data[1] + " " + data[2];
+    }
+    
 })
 
-// API pour donner des conseils
+// API pour donner des conseils (anglais)
 getData("https://api.adviceslip.com/advice").then(data => {
-    console.log("Random advice: " + data.slip.advice);
+    // TODO: ajouter des try catch pour gérer les erreurs de fetch
+    // console.log("Random advice: " + data.slip.advice);
+    if (modalBodyAdvice) {
+        modalBodyAdvice.innerHTML = "Si ça peut aider : " + data.slip.advice;
+    }
 })
+  

@@ -16,16 +16,33 @@ class MyNav extends HTMLElement {
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                             <li class="nav-item">
-                                <i class="fa-solid fa-circle-half-stroke"></i>
+                                <!-- Bouton de la modale -->
+                                    <i class="fa-solid fa-robot" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
                             </li>
                             <li class="nav-item">
-                                <i class="fa-solid fa-robot"></i>
+                                <i class="fa-solid fa-circle-half-stroke"></i>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+        <!-- Modale centrée verticalement -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">La vie est "random" 🎲</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modalBodyJoke"></div>
+                    <div class="modal-body" id="modalBodyAdvice"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         `;
     }
 }
