@@ -30,4 +30,3 @@ getData("https://api.adviceslip.com/advice").then(data => {
         modalBodyAdvice.innerHTML = "Si ça peut aider : " + data.slip.advice;
     }
 })
-  

@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SCRIPTS -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython.min.js"
-        integrity="sha512-TePPQo/MPAgO0wpr1hlTTf2zBb+JytEf5k6iikBl10TmozMNHpWTdxA50HMaW1fOmoiw9OaNsL2D2PO7pARP6w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- ICONES -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -14,20 +10,22 @@
     <!-- STYLES -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="stylesheet" href="/public/css/responsive.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/responsive.css">
     <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="/public/assets/picto_rose.PNG">
+    <link rel="icon" type="image/x-icon" href="../static/picto_rose.PNG">
     <title>Chatbot</title>
 </head>
-<body onload="brython()">
+<body>
     
     <my-nav></my-nav>
     
     <main>
+        
         <h1>Chatbot</h1>
-        <div id="replyArea"></div>
-        <input id="userInput"><button id="myButton">Click !</button>
+        <div id="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Tapez votre message ici...">
+        <button onclick="sendMessage()">Envoyer</button>
     </main>
 
     <my-footer></my-footer>
@@ -35,14 +33,11 @@
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-    <!-- PYTHON -->
-    <!-- <script type="text/python" src="/app/chat.py"></script> -->
-    <script type="text/python" src="/app/test.py"></script>
-
     <!-- SCRIPTS -->
     <!-- COMPONENTS.JS AVANT SCRIPTS.JS POUR EXECUTER LE JS DANS LES COMPOSANTS !!! -->
-    <script src="/public/js/components.js"></script>
-    <script src="/public/js/scripts.js"></script>
+    <script src="../static/components.js"></script>
+    <script src="../static/scripts.js"></script>
+    <script src="../static/chat.js"></script>
 </body>
 
 </html>
