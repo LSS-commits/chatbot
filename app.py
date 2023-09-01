@@ -34,6 +34,41 @@ def index():
 # def test(text):
 #     return render_template('chatbot.html', txt=text)
 
+# image= openai.Image.create(
+#   prompt="Chat gris",
+#   n=2,
+#   size="1024x1024"
+# )
+# print(image)
+
+
+import logging
+
+# Configuration de base du logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+try:
+    # Ouverture du fichier audio
+    with open("italian.m4a", "rb") as audio_file:
+        logging.info("Fichier audio ouvert avec succès.")
+        
+        # Supposons que vous utilisez une API appelée openai
+        translate = openai.Audio.translate(
+            file = audio_file,
+            model = "whisper-1",
+            prompt="From Italian",
+            response_format="text",
+            language="en",
+        )
+
+        logging.info("Réponse obtenue de l'API: %s", translate)
+    
+        print(translate)
+except Exception as e:
+    logging.error("Une erreur s'est produite: %s", e)
+
+
+
 # définition de la route pour le point de terminaison du chatbot où les demandes POST seront envoyées (soumission du formulaire)
 @app.route('/postData', methods=["POST"])
 def postData():
