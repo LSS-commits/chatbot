@@ -33,7 +33,7 @@ https://github.com/e1ven/Robohash
 Exemple d'architecture de projet : https://github.com/shoryamalani/templates/blob/master/flask/flask-normal/app.py
 
 
-Ouvrir le navigateur automatiquement lorsque le serveur est lancé : https://stackoverflow.com/questions/54235347/open-browser-automatically-when-python-code-is-executed#54235461
+Ouvrir le navigateur automatiquement lorsque le serveur est lancé: https://stackoverflow.com/questions/54235347/open-browser-automatically-when-python-code-is-executed#54235461
 
 ### OPENAI ###
 Différence entre Completion et ChatCompletion
