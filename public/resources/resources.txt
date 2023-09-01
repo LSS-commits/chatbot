@@ -1,0 +1,30 @@
+### Pour créer des templates HMTL ###
+Grunt task runner (non maintenu depuis 2021 ?): https://gruntjs.com/
+
+Mustache.js (nécessité d'utiliser Nodejs): https://mustache.github.io/
+https://github.com/janl/mustache.js
+
+Web components (le code doit rester simple et maintenable pour assurer la compatibilité avec tous les navigateurs) : https://css-tricks.com/an-introduction-to-web-components/
++ HTML custom elements : https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
+
+### Style ###
+Bootswatch (thèmes pour Bootstrap, compatibles avec version 5 mais beaucoup de bugs non résolus) :
+https://bootswatch.com/
+
+v5 => https://github.com/thomaspark/bootswatch
+
+### APIs publiques / gratuites ###
+Fetch API pour manipuler des API avec JavaScript : 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+Liste d'APIs :
+https://publicapis.io/
+https://apipheny.io/free-api/
+
+Advice slip : 
+https://publicapis.io/advice-slip-api
+https://api.adviceslip.com/advice
+
+Robohash :
+https://robohash.org/
+https://github.com/e1ven/Robohash
