@@ -1,0 +1,141 @@
+/*** POLICES ***/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+/*** GENERAL ***/
+:root {
+    --background-color: #ededed; 
+    /* OU #e6e6e6 OU #fefefe */
+    --text-color: #171717;  
+    /* OU #0f0f0f */
+    --primary-color: #cfcfcf;
+    --secondary-color: #e277cd;
+    --gradient-color: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)
+}
+
+/* impossible de sélectionner le texte de l'élément et celui de ses descendants. */
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none
+}
+
+
+/* ELEMENTS */
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Montserrat', sans-serif
+}
+
+.btn-primary{
+    /* background-color: var(--text-color);
+    color: var(--secondary-color); */
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none    
+}
+.btn-primary:hover {
+    background-color: var(--text-color);
+    color: var(--secondary-color)
+}
+
+/*** BARRE DE NAVIGATION ***/
+.navbar {
+    background-color: var(--text-color)
+}
+/* logo et bouton toggle restent alignés sur tous les écrans */
+.nav-logo {
+    min-width: 50px;
+    max-width: 100px;
+    border-radius: 5px
+}
+.navbar-toggler {
+    background-color: var(--secondary-color);
+    color: var(--text-color)
+}
+.nav-item {
+    font-size: 2rem;
+    padding: 1rem;
+    color: var(--secondary-color);
+    cursor: pointer
+}
+
+/*** FOOTER ***/
+footer {
+    border-top: solid 1px var(--text-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center
+}
+footer span {
+    font: .8rem 'Montserrat', sans-serif
+}
+footer ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto
+}
+footer ul li {
+    margin-left: 10px !important
+}
+
+footer ul a {
+    color: var(--text-color)
+}
+footer ul a i {
+    transition: all .3s;
+    cursor: pointer
+}
+footer ul a:hover {
+    color: var(--secondary-color) !important
+}
+
+/*** PAGE D'ACCUEIL ***/
+.start-btn {
+    /* background-color: var(--text-color);
+    color: var(--secondary-color); */
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none
+}
+.start-btn:hover {
+    background-color: var(--text-color);
+    color: var(--secondary-color)
+}
+
+
+
+
+/* Style du scroll sur plusieru navigateurs */
+/* .messages-container {
+    max-height: 400px; */
+    /* définissez la hauteur maximale en fonction de vos besoins */
+    /* overflow-y: auto; */
+    /* défilement vertical lorsque le contenu dépasse la hauteur maximale */
+    /* padding: 10px;
+} */
+
+/* Personnalisation de la barre de défilement pour les navigateurs basés sur Chromium */
+/* .messages-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+    background: #f0f2f5;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 20px;
+    border: 3px solid #f0f2f5;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
+
+/* Personnalisation de la barre de défilement pour Firefox */
+/* .messages-container {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f0f2f5;
+    scroll-behavior: smooth;
+} */
