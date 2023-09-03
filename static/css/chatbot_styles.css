@@ -214,3 +214,27 @@ body {
 }
 /* pour fleche
 padding: 10px; */
+
+
+.cursor {
+  background-image: url(/static/assets/picto_rose.png);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
