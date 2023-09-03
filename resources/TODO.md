@@ -29,6 +29,7 @@ https://www.datacamp.com/tutorial/converting-speech-to-text-with-the-openAI-whis
 - limite de caractères à 60
 <i class="fa-regular fa-image"></i> + animation beat ou beat fade
 - check validation clipboard
+- retirer "chatbot :" de la réponse copiée
 
 FIN DU PROJET
 - nettoyer le projet des fichiers inutiles
