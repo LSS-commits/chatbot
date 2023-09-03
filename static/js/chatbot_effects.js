@@ -27,7 +27,7 @@ function displayMessageWordByWord(message, containerElem) {
   });
 }
 
-// FLeche de scroll vers le bas
+// Flèche de scroll vers le bas
 document.addEventListener("DOMContentLoaded", function () {
     const responseArea = document.getElementById("responseArea");
     const scrollArrow = document.getElementById("scrollArrow");
@@ -37,29 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (responseArea.scrollHeight - responseArea.scrollTop - responseArea.clientHeight < 5) {
             scrollArrow.classList.add("hidden");
         }
-        // Si la zone de réponse est défilable (i.e. il y a plus de contenu que ce qui peut être affiché)
+        // Si la zone de réponse est défilable
         else if (responseArea.scrollHeight > responseArea.clientHeight) {
             scrollArrow.classList.remove("hidden");
         }
     }
-
-    // Lorsque l'utilisateur fait défiler la zone de réponse, vérifiez sa position
+    // Fait défiler la zone de réponse, vérifiez sa position
     responseArea.addEventListener("scroll", checkScrollPosition);
-
-    // Lorsque l'utilisateur clique sur la flèche, faites défiler la zone de réponse vers le bas
+    // Clique sur la flèche, faites défiler la zone de réponse vers le bas
     scrollArrow.addEventListener("click", function() {
         responseArea.scrollTo({
             top: responseArea.scrollHeight,
             behavior: "smooth"
         });
-
-        console.log('J\'ai cliqué sur la flèche');
-
-        // Étant donné que le défilement est lisse, il peut y avoir un léger délai avant que la zone ne soit complètement défilée. 
-        // C'est pourquoi nous utiliserons setTimeout pour vérifier la position après un petit délai.
-        setTimeout(checkScrollPosition, 500);  // ajustez la durée si nécessaire
+       setTimeout(checkScrollPosition, 500);
     });
-
     // Au chargement, vérifiez la position de défilement initiale
     checkScrollPosition();
 });

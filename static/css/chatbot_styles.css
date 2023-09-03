@@ -200,7 +200,6 @@ p.bounce {
 .response-area::-webkit-scrollbar-thumb:hover {
   background-color: rgba(251, 89, 159, 0.494)
 }
-
 /* Navigateurs pas sur WebKit */
 .response-area {
   scrollbar-width: thin; /* Firefox */
@@ -209,25 +208,16 @@ p.bounce {
 
 /* Acceder au bas du message */
 .scroll-down-arrow {
-  right: 10px;
-  bottom: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--secondary-color);
-  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  color: var(--secondary-color);
   cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.3s;
 }
-
 .scroll-down-arrow:hover {
-  opacity: 1;
+  background-color: rgba(251, 89, 159, 0.494)
 }
 /* Cachez la flèche lorsque l'utilisateur est en bas de la zone de réponse */
 .scroll-down-arrow.hidden {
   display: none;
 }
-
 
 /* Copier reponse */
 .copy-btn {
