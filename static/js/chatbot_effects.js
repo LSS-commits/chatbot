@@ -24,18 +24,20 @@ function displayMessageWordByWord(message, containerElem) {
         delay += (word.length + 1) * 100;  // Incrémentez le délai en fonction du nombre de lettres
     });
 }
-document.addEventListener("DOMContentLoaded", function() {
-    // Références aux éléments
-    const scrollArrow = document.getElementById("scrollArrow");
-    const responseArea = document.getElementById("responseArea");
 
-    // Fonction pour vérifier la position de défilement
+
+document.addEventListener("DOMContentLoaded", function() {
+    const responseArea = document.getElementById("responseArea");
+    const scrollArrow = document.getElementById("scrollArrow");
+
     function checkScrollPosition() {
-        // Si l'utilisateur est près du bas de la zone de réponse (avec une tolérance de 5 pixels)
-        if (responseArea.scrollHeight - responseArea.scrollTop <= responseArea.clientHeight + 5) {
-            scrollArrow.classList.add("hidden"); // Cache la flèche
-        } else {
-            scrollArrow.classList.remove("hidden"); // Affiche la flèche
+        // Vérifiez si l'utilisateur est au bas de la zone de réponse avec une marge d'erreur de 5 pixels
+        if ((responseArea.scrollHeight - responseArea.scrollTop - responseArea.clientHeight) < 5) {
+            scrollArrow.classList.add("hidden");
+        } 
+        // Si la zone de réponse est défilable (i.e. il y a plus de contenu que ce qui peut être affiché)
+        else if (responseArea.scrollHeight > responseArea.clientHeight) {
+            scrollArrow.classList.remove("hidden");
         }
     }
 
@@ -45,40 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Lorsque l'utilisateur clique sur la flèche, faites défiler la zone de réponse vers le bas
     scrollArrow.addEventListener("click", function() {
         responseArea.scrollTop = responseArea.scrollHeight;
+        // Après avoir défilé jusqu'au bas, vérifiez à nouveau la position pour cacher la flèche
+        checkScrollPosition();
     });
 
     // Au chargement, vérifiez la position de défilement initiale
     checkScrollPosition();
 });
-
-// Création de l'élément du message du bot
-const botMessageElem = document.createElement("div");
-botMessageElem.classList.add("message", "bot-message");
-
-// Création du bouton
-const copyBtn = document.createElement("button");
-copyBtn.innerHTML = 'Copier';
-copyBtn.classList.add("copy-btn");
-botMessageElem.appendChild(copyBtn); // Ajout du bouton à l'élément du message
-
-// Ajout de l'écouteur d'événements au bouton
-copyBtn.addEventListener("click", function(e) {
-    e.stopPropagation(); // Empêchez tout autre événement
-
-    navigator.clipboard.writeText(data.message)
-        .then(function() {
-            console.log('Text successfully copied to clipboard!');
-        })
-        .catch(function(err) {
-            console.error('Could not copy text: ', err);
-        });
-});
-
-// Création de l'élément de texte pour le message
-const messageTextElem = document.createElement("span");
-messageTextElem.textContent = data.message;
-botMessageElem.appendChild(messageTextElem); // Ajout du texte à l'élément du message
-
-// Ajout de l'élément complet du message à la zone de réponse
-responseArea.appendChild(botMessageElem);
-
