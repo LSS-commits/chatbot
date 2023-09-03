@@ -35,19 +35,28 @@
     <!-- Main Content -->
     <main>
         <!-- Chatbot Section -->
-        <div class="container-general">
+        <div class="custom-container">
             <div class="chat-header">
                 <h1>ChatBot</h1>
                 <p>Comment puis-je vous aider?</p>
             </div>
             <div class="chat-container">
                 <div class="response-area" id="responseArea"></div>
+                <!-- The text field -->
+<!-- <input type="text" value="Hello World" id="myInput"> -->
+
+<!-- The button used to copy the text -->
+<!-- <button onclick="myFunction()">Copy text</button> -->
+
+
                 <div class="input-area">
                     <input type="text" id="userInput" placeholder="Ecrivez votre message..." required>
                     <button id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    <div class="loading-indicator" id="loadingIndicator">...</div>
+                    <!-- Scroll Bas -->
+                    <div class="scroll-down-arrow" id="scrollArrow"></div>
+
                 </div>
-                <!-- Scroll Bas -->
-                <div class="scroll-down-arrow" id="scrollArrow"></div>
             </div>
         </div>
     </main>

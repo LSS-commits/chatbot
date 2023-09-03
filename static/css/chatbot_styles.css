@@ -25,7 +25,7 @@
   --background-color: #ededed;
   --text-color: #171717;
   --primary-color: #cfcfcf; /* couleur principale, utilisée pour les éléments en arrière-plan comme le header */
-  --secondary-color: #e277cd; /* couleur secondaire, utilisée pour les éléments cliquables comme les boutons */
+  --secondary-color: rgb(226, 119, 205); /* couleur secondaire, utilisée pour les éléments cliquables comme les boutons */
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
 
@@ -90,13 +90,14 @@ p.bounce {
   animation: bounce 2s;
 }
 
-.container-general {
+.custom-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
 }
+
+
 /* Animation de chargement réponse '...' */
 @keyframes loadingDots {
   0% {
@@ -147,6 +148,7 @@ p.bounce {
   border-bottom: 1px solid #eee;
   padding: 20px;
   overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 .input-area {
@@ -196,7 +198,7 @@ p.bounce {
   border-radius: 5px;
 }
 .response-area::-webkit-scrollbar-thumb:hover {
-  opacity: 0.8;
+  background-color: rgba(251, 89, 159, 0.494)
 }
 
 /* Navigateurs pas sur WebKit */
@@ -207,7 +209,6 @@ p.bounce {
 
 /* Acceder au bas du message */
 .scroll-down-arrow {
-  position: absolute;
   right: 10px;
   bottom: 10px;
   width: 30px;
