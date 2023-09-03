@@ -99,18 +99,13 @@ body {
    
   }
 }
-
 .loadingDots {
   display: none;
-  color: transparent;
-  font-size: 3em;
+  font-size: 2em;
   content: '...';
   animation: loadingDots 1.5s infinite;
   margin-left: 5px;
 }
-
-
-
 
 /* Animation affichage réponse */
 @keyframes slideInFromBottom {
@@ -127,6 +122,10 @@ body {
 
  p{
   animation: slideInFromBottom 0.5s ease-in-out;
+}
+
+.chatbotAnswer{
+  margin: 0;
 }
 
 /* .answerNumber::after {
@@ -191,6 +190,7 @@ body {
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
+  margin: 20px 0;
 }
 
 .btnCopy .fa-clipboard-check{
