@@ -185,11 +185,9 @@ p.bounce {
 
 /* Acceder au bas du message */
 .scroll-down-arrow {
+  padding: 10px;
   color: var(--secondary-color);
   cursor: pointer;
-}
-.scroll-down-arrow:hover {
-  background-color: rgba(251, 89, 159, 0.494)
 }
 /* Cachez la flèche lorsque l'utilisateur est en bas de la zone de réponse */
 .scroll-down-arrow.hidden {
@@ -206,15 +204,6 @@ p.bounce {
   margin-left: 10px;
   display: none;  /* Initial state hidden */
 }
-
-.single-response-container {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* espace entre le message et le bouton */
-}
-
-.bot-message {
-  flex-grow: 1; /* permet au message de prendre tout l'espace disponible */
-}
-
+/* pour fleche
+padding: 10px; */
 

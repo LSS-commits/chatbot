@@ -20,8 +20,39 @@ function sendMessage() {
     /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
     .then(response => response.json())
     .then(data => {
-        responseArea.innerHTML += '<p><strong>Chatbot:</strong> ' + data.message + '</p>';    
+        var answerNumber = 1
+        var btnNumber = 1
+        responseArea.innerHTML += '<p class="answerNumber '+ answerNumber +'"><strong>Chatbot:</strong> ' + data.message + '</p> <button class="btnNumber '+ btnNumber +'">Copy</button>';    
+        console.log(responseArea.innerHTML)
+        // Copy to clipboard
+        function myFunction(answerId, btnId) {
+            btnId = "1" 
+            var btnCopy = document.getElementById(btnId);
+            console.log(btnCopy)
+    //   var copyEl = document.getElementById(answerId);
+    
+        //   if (answerId === btnId) {
+        //     btnCopy.addEventListener("click", function () {
+        //       console.log(btnCopy);
+        //     });
+            // Récupérer le contenu de la div
+            // var copyText = document.getElementById("copyChatbotAnswer").innerText;
+            // console.log(copyEl);
+            // console.log(copyText)
+        //   }
+        
+        // Copier le contenu dans le presse-papiers
+        // navigator.clipboard.writeText(copyText)
+        //     .then(() => {
+        //         alert("Texte copié avec succès !");
+        //     })
+        //     .catch(err => {
+        //         console.error("Erreur lors de la copie du texte: ", err);
+        //     });
+        }
+        myFunction()
     });
+    
 }
 
 /* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
@@ -31,12 +62,10 @@ const userInput = document.getElementById("userInput");
 function handleEvent(e){
     // si l'événement est un clic
     if(e.type === "click"){
-        console.log("click"); 
         sendMessage();
     }
     // si l'utilisateur presse la touche Entrée du clavier
     if(e.keyCode === 13){
-        console.log("enter key pressed"); 
         sendMessage();
     }
 }
