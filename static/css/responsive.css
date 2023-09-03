@@ -28,3 +28,38 @@
         margin: 0 10px 0 10px !important
     }
 }
+
+
+/* Responsive Chatbot.html */
+/* Pour les écrans de tablette */
+@media (max-width: 768px) {
+    .chat-container {
+      width: 80%;
+    }
+    .response-area {
+      height: 200px; 
+    }
+  }
+
+  /* Pour les écrans de mobile */
+  @media (max-width: 480px) {
+    .chat-container {
+      width: 95%;
+    }
+    .chat-header h1 {
+      font-size: 1.5em;
+    }
+    .response-area {
+      height: 150px;
+    }
+    .input-area input {
+      flex-grow: 1;
+      width: 60%;
+    }
+    .input-area button {
+      width: 35%;
+    }
+  }
+
+/* Responsive index.html */
+  
