@@ -1,15 +1,3 @@
-:root {
-  --background-color: #ededed;
-  --text-color: #171717;
-  --primary-color: #cfcfcf; /* couleur principale, utilisée pour les éléments en arrière-plan comme le header */
-  --secondary-color: rgb(226, 119, 205); /* couleur secondaire, utilisée pour les éléments cliquables comme les boutons */
-}
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
-
-/* * {
-    user-select: none;
-  } */
-
 /* Général avec effet keyframe fondu en arrivée */
 body {
   margin: 0;
@@ -28,16 +16,16 @@ body {
 }
 
 .chat-container,
-.response-area {
+.response-area, .pAlone{
   animation: fadeIn 1s ease-in-out;
 }
 
 .chat-header {
   padding: 10px 20px;
+  text-align: center;
 }
-.chat-header h2 {
+.chat-header h1 {
   margin: 0;
-  font-size: 1.5em;
   color: var(--text-color);
 }
 .chat-header p {
@@ -62,11 +50,9 @@ body {
   }
 }
 
-.chat-header h1, 
-#pAlone.bounce {
+.chat-header h1{
   animation: bounce 2s;
 }
-
 
 .custom-container {
   display: flex;
@@ -119,19 +105,9 @@ body {
   }
 }
 
-
- p{
-  animation: slideInFromBottom 0.5s ease-in-out;
-}
-
 .chatbotAnswer{
   margin: 0;
 }
-
-/* .answerNumber::after {
-  content: "";
-  animation: loadingDots 1s infinite;
-} */
 
 .chat-container {
   background-color: #fff;
