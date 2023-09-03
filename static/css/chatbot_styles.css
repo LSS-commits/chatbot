@@ -1,4 +1,3 @@
-/* Général avec effet keyframe fondu en arrivée */
 body {
   margin: 0;
   background-color: var(--background-color);
@@ -7,52 +6,24 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.chat-container,
-.response-area,
-.pAlone {
-  animation: fadeIn 1s ease-in-out;
-}
-
-.chat-header {
-  padding: 10px 20px;
-  text-align: center;
-}
-.chat-header h1 {
-  margin: 0;
-  color: var(--text-color);
-}
-.chat-header p {
-  margin: 5px 0 0;
-  font-size: 1em;
-  color: var(--text-color);
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
 }
 
-.chat-header h1 {
-  animation: bounce 2s;
+@keyframes loadingDots {
+  0%, 100% { color: rgba(0, 0, 0, 0); }
+  20% { color: rgb(255, 192, 223); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .custom-container {
@@ -62,47 +33,18 @@ body {
   flex-direction: column;
 }
 
-/* Animation de chargement réponse '...' */
-@keyframes loadingDots {
-  0%,
-  100% {
-    color: rgba(0, 0, 0, 0);
-  }
-  20% {
-    color: rgb(255, 192, 223); /* Rose clair */
-  }
-  40% {
-    color: rgba(0, 0, 0, 0);
-  }
-  60% {
-    color: rgba(0, 0, 0, 0);
-  }
-  80% {
-    color: rgba(0, 0, 0, 0);
-  }
-}
-.loadingDots {
-  display: none;
-  font-size: 2em;
-  content: "...";
-  animation: loadingDots 1.5s infinite;
-  margin-left: 5px;
+.chat-header {
+  padding: 10px 20px;
+  text-align: center;
 }
 
-/* Animation affichage réponse */
-/* @keyframes slideInFromBottom {
-  from {
-    transform: translateY(20%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-} */
-
-.chatbotAnswer {
+.chat-header h1 {
   margin: 0;
+  animation: bounce 2s;
+}
+
+.chat-header p, .chat-header h1 {
+  color: var(--text-color);
 }
 
 .chat-container {
@@ -110,67 +52,20 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 400px;
-  overflow: hidden;
+}
+
+.response-area, .chat-container, .pAlone {
+  animation: fadeIn 1s ease-in-out;
 }
 
 .response-area {
   height: 300px;
-  border-bottom: 1px solid #eee;
   padding: 20px;
+  border-bottom: 1px solid #eee;
   overflow-y: auto;
   overflow-wrap: break-word;
 }
 
-.input-area {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
-.input-area input:focus {
-  outline: none;
-  box-shadow: 0 0 5px var(--secondary-color);
-  border-color: var(--secondary-color);
-}
-
-.input-area input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 4px;
-}
-
-.input-area button {
-  padding: 10px 15px;
-  margin-left: 10px;
-  border: none;
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.input-area button:hover {
-  opacity: 0.8;
-  font-weight: 600;
-}
-
-.btnCopy {
-  padding: 10px 15px;
-  border: none;
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 20px 0;
-}
-
-.btnCopy .fa-clipboard-check {
-  color: rgba(127, 255, 212, 0.767);
-  margin-left: 5px;
-}
-
-/* Scroll personnalisé */
 .response-area::-webkit-scrollbar {
   width: 10px;
 }
@@ -185,24 +80,56 @@ body {
 .response-area::-webkit-scrollbar-thumb:hover {
   background-color: rgba(251, 89, 159, 0.494);
 }
-/* Navigateurs pas sur WebKit */
 .response-area {
-  scrollbar-width: thin; /* Firefox */
+  scrollbar-width: thin;
   scrollbar-color: var(--secondary-color) var(--primary-color);
 }
 
-/* Acceder au bas du message */
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.input-area input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 5px var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.input-area button, .btnCopy {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.input-area button:hover {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.loadingDots {
+  font-size: 2em;
+  content: "...";
+  animation: loadingDots 1.5s infinite;
+  margin-left: 5px;
+  display: none;
+}
+
 .scroll-down-arrow {
   padding: 10px;
   color: var(--secondary-color);
   cursor: pointer;
 }
-/* Cachez la flèche lorsque l'utilisateur est en bas de la zone de réponse */
-.scroll-down-arrow.hidden {
-  display: none;
-}
 
-/* Copier reponse */
 .copy-btn {
   cursor: pointer;
   color: #333;
@@ -210,14 +137,19 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-left: 10px;
-  display: none; /* Initial state hidden */
+  display: none; /* État initial caché */
 }
-/* pour fleche
-padding: 10px; */
 
+.btnCopy .fa-clipboard-check {
+  color: rgba(127, 255, 212, 0.767);
+  margin-left: 5px;
+}
 
 .cursor {
   background-image: url(/static/assets/picto_rose.png);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; */
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -225,16 +157,8 @@ padding: 10px; */
   vertical-align: middle;
   margin-left: 5px;
   animation: blink 1s infinite;
+  overflow: hidden;
+  box-shadow: 0 0 3px 1px rgba(255, 105, 180, 0.6); /* Ombre rose tout autour */
 }
 
-@keyframes blink {
-  0% {
-      opacity: 1;
-  }
-  50% {
-      opacity: 0.5;
-  }
-  100% {
-      opacity: 1;
-  }
-}
+
