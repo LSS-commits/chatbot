@@ -1,26 +1,3 @@
-/* STYLE DE LA PAGE CHATBOT */
-/* body {
-    margin: 0;
-    background-color: var(--background-color);
-    color: var(--text-color)
-}
-
-/* Chatbot */
-/* .chat-header {
-    padding: 10px 20px
-}
-
-.chat-header h1 {
-    margin: 0;
-    font-size: 1.5em
-}
-
-.chat-header p {
-    margin: 5px 0 0;
-    font-size: 1em
-} */
-
-/* Code test */
 :root {
   --background-color: #ededed;
   --text-color: #171717;
@@ -221,19 +198,23 @@ p.bounce {
 
 /* Copier reponse */
 .copy-btn {
-  display: none; 
-  background-color: #ccc;
-  border: none;
-  border-radius: 50%;
   cursor: pointer;
+  color: #333;
   padding: 5px 10px;
-  font-size: 0.8em;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+  display: none;  /* Initial state hidden */
 }
 
-.message.bot-message:hover .copy-btn {
-  display: block;
+.single-response-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espace entre le message et le bouton */
 }
+
+.bot-message {
+  flex-grow: 1; /* permet au message de prendre tout l'espace disponible */
+}
+
 

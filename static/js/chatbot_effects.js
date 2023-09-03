@@ -56,3 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
     checkScrollPosition();
 });
 
+function myFunction() {
+    // Récupérer le contenu de la div
+    var copyText = document.getElementById("responseArea").innerText;
+  
+    // Copier le contenu dans le presse-papiers
+    navigator.clipboard.writeText(copyText)
+        .then(() => {
+            alert("Texte copié avec succès !");
+        })
+        .catch(err => {
+            console.error("Erreur lors de la copie du texte: ", err);
+        });
+}
