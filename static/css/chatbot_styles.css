@@ -77,60 +77,36 @@ body {
 
 
 /* Animation de chargement réponse '...' */
-/* @keyframes loadingDots {
-  0% {
-    content: ".";
-  }
-  33% {
-    content: "..";
-  }
-  66% {
-    content: "...";
-  }
-  100% {
-    content: "";
-  }
-} */
-
 @keyframes loadingDots {
   0%, 100% {
       color: rgba(0,0,0,0);
-      text-shadow: 
-          .25em 0 0 rgba(0,0,0,0),
-          .5em 0 0 rgba(0,0,0,0);
+ 
   }
   20% {
       color: rgb(255, 192, 223); /* Rose clair */
-      text-shadow: 
-          .25em 0 0 rgba(0,0,0,0),
-          .5em 0 0 rgba(0,0,0,0);
+   
   }
   40% {
       color: rgba(0,0,0,0);
-      text-shadow: 
-          .25em 0 0 rgb(255, 105, 180), /* Rose moyen */
-          .5em 0 0 rgba(0,0,0,0);
+
   }
   60% {
       color: rgba(0,0,0,0);
-      text-shadow: 
-          .25em 0 0 rgba(0,0,0,0),
-          .5em 0 0 rgb(226, 119, 205); /* Rose foncé */
+
   }
   80% {
       color: rgba(0,0,0,0);
-      text-shadow: 
-          .25em 0 0 rgba(0,0,0,0),
-          .5em 0 0 rgba(0,0,0,0);
+   
   }
 }
 
 .loadingDots {
-  display: inline-block;
+  display: none;
   color: transparent;
-  font-size: 2em;
+  font-size: 3em;
   content: '...';
   animation: loadingDots 1.5s infinite;
+  margin-left: 5px;
 }
 
 

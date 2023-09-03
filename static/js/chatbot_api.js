@@ -1,3 +1,8 @@
+/* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
+const sendButton = document.getElementById("sendButton");
+const userInput = document.getElementById("userInput");
+const loadingDots = document.getElementById("loadingDots");
+
 // incrémenteur de réponses
 var answerNumber = 0
 
@@ -11,6 +16,9 @@ function sendMessage() {
     responseArea.innerHTML += '<p><strong>Utilisateur:</strong> ' + message + '</p>';
 
     // TODO: validation du formulaire, pas d'input vide
+    sendButton.style.display="none";
+    loadingDots.style.display="block";
+
     
     /* envoyer les données du formulaire à la route Flask */
     fetch('/postData', {
@@ -26,6 +34,8 @@ function sendMessage() {
         answerNumber += 1;
         responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
 
+        sendButton.style.display="block";
+        loadingDots.style.display="none";
         // copier dans le presse-papiers
         var btnEl = document.getElementById("btnNumber" + answerNumber);
         var answerEl = document.getElementById("answerNumber" + answerNumber);
@@ -47,9 +57,6 @@ function sendMessage() {
     
 }
 
-/* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
-const sendButton = document.getElementById("sendButton");
-const userInput = document.getElementById("userInput");
 
 function handleEvent(e){
     // si l'événement est un clic
