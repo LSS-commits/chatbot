@@ -16,7 +16,8 @@ body {
 }
 
 .chat-container,
-.response-area, .pAlone{
+.response-area,
+.pAlone {
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -50,7 +51,7 @@ body {
   }
 }
 
-.chat-header h1{
+.chat-header h1 {
   animation: bounce 2s;
 }
 
@@ -61,40 +62,35 @@ body {
   flex-direction: column;
 }
 
-
 /* Animation de chargement réponse '...' */
 @keyframes loadingDots {
-  0%, 100% {
-      color: rgba(0,0,0,0);
- 
+  0%,
+  100% {
+    color: rgba(0, 0, 0, 0);
   }
   20% {
-      color: rgb(255, 192, 223); /* Rose clair */
-   
+    color: rgb(255, 192, 223); /* Rose clair */
   }
   40% {
-      color: rgba(0,0,0,0);
-
+    color: rgba(0, 0, 0, 0);
   }
   60% {
-      color: rgba(0,0,0,0);
-
+    color: rgba(0, 0, 0, 0);
   }
   80% {
-      color: rgba(0,0,0,0);
-   
+    color: rgba(0, 0, 0, 0);
   }
 }
 .loadingDots {
   display: none;
   font-size: 2em;
-  content: '...';
+  content: "...";
   animation: loadingDots 1.5s infinite;
   margin-left: 5px;
 }
 
 /* Animation affichage réponse */
-@keyframes slideInFromBottom {
+/* @keyframes slideInFromBottom {
   from {
     transform: translateY(20%);
     opacity: 0;
@@ -103,9 +99,9 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
-.chatbotAnswer{
+.chatbotAnswer {
   margin: 0;
 }
 
@@ -159,7 +155,7 @@ body {
   font-weight: 600;
 }
 
-.btnCopy{
+.btnCopy {
   padding: 10px 15px;
   border: none;
   background-color: var(--secondary-color);
@@ -169,7 +165,7 @@ body {
   margin: 20px 0;
 }
 
-.btnCopy .fa-clipboard-check{
+.btnCopy .fa-clipboard-check {
   color: rgba(127, 255, 212, 0.767);
   margin-left: 5px;
 }
@@ -187,7 +183,7 @@ body {
   border-radius: 5px;
 }
 .response-area::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(251, 89, 159, 0.494)
+  background-color: rgba(251, 89, 159, 0.494);
 }
 /* Navigateurs pas sur WebKit */
 .response-area {
@@ -214,8 +210,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-left: 10px;
-  display: none;  /* Initial state hidden */
+  display: none; /* Initial state hidden */
 }
 /* pour fleche
 padding: 10px; */
-

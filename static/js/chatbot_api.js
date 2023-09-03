@@ -33,13 +33,14 @@ function sendMessage() {
     .then(data => {
         answerNumber += 1;
         responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
-
+        
+        // Remplacer btn par loadingDots
         sendButton.style.display="block";
         loadingDots.style.display="none";
+        
         // copier dans le presse-papiers
         var btnEl = document.getElementById("btnNumber" + answerNumber);
         var answerEl = document.getElementById("answerNumber" + answerNumber);
-
         btnEl.addEventListener('click', function (event) {
             if (event.target != undefined) {
                 var copyText = answerEl.innerText;
