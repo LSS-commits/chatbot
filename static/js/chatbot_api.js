@@ -1,3 +1,6 @@
+// incrémenteur de réponses
+var answerNumber = 0
+
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
 function sendMessage() {
     // récupérer l'entrée utilisateur et l'afficher
@@ -20,37 +23,25 @@ function sendMessage() {
     /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
     .then(response => response.json())
     .then(data => {
-        var answerNumber = 1
-        var btnNumber = 1
-        responseArea.innerHTML += '<p class="answerNumber '+ answerNumber +'"><strong>Chatbot:</strong> ' + data.message + '</p> <button class="btnNumber '+ btnNumber +'">Copy</button>';    
-        console.log(responseArea.innerHTML)
-        // Copy to clipboard
-        function myFunction(answerId, btnId) {
-            btnId = "1" 
-            var btnCopy = document.getElementById(btnId);
-            console.log(btnCopy)
-    //   var copyEl = document.getElementById(answerId);
-    
-        //   if (answerId === btnId) {
-        //     btnCopy.addEventListener("click", function () {
-        //       console.log(btnCopy);
-        //     });
-            // Récupérer le contenu de la div
-            // var copyText = document.getElementById("copyChatbotAnswer").innerText;
-            // console.log(copyEl);
-            // console.log(copyText)
-        //   }
-        
-        // Copier le contenu dans le presse-papiers
-        // navigator.clipboard.writeText(copyText)
-        //     .then(() => {
-        //         alert("Texte copié avec succès !");
-        //     })
-        //     .catch(err => {
-        //         console.error("Erreur lors de la copie du texte: ", err);
-        //     });
-        }
-        myFunction()
+        answerNumber += 1;
+        responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
+
+        // copier dans le presse-papiers
+        var btnEl = document.getElementById("btnNumber" + answerNumber);
+        var answerEl = document.getElementById("answerNumber" + answerNumber);
+
+        btnEl.addEventListener('click', function (event) {
+            if (event.target != undefined) {
+                var copyText = answerEl.innerText;
+                navigator.clipboard.writeText(copyText)
+                .then(() => {
+                    btnEl.innerHTML = 'Copié avec succès <i id="clipboardIcon" class="fa-solid fa-clipboard-check"></i>'
+                })
+                .catch(err => {
+                    console.error("Erreur lors de la copie du texte: ", err);
+                });
+            }
+        })
     });
     
 }
