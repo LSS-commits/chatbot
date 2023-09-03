@@ -28,11 +28,16 @@
 
     <!-- Container principal de la page -->
     <main>
+        
         <!-- Chatbot -->
-        <div class="container">
+        <div class="custom-container">
             <div class="chat-header">
                 <h1>ChatBot</h1>
                 <p>Comment puis-je vous aider?</p>
+
+                <!-- Messages d'erreur -->
+                <div class="error-container" id="errorContainer"></div>
+                
             </div>
 
             <div class="chat-container">
@@ -43,7 +48,6 @@
                     <button id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                 </div>
             </div>
-
         </div>
     </main>
 

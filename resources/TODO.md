@@ -1,7 +1,7 @@
 => Hilel
 - finir le style de la page chatbot 
 - style du scroller sur la chatbox
-- limiter le nombre de caractères dans l'input / mettre un champ textarea au lien d'un input ?
+- mettre un champ textarea au lien d'un input ?
 => champ textarea avec limite de taille + scroll + pas de limite de caractères
 
 /* test scrollbar FIREFOX */
@@ -15,20 +15,22 @@
 }
 
 - permettre à l'utilisateur de copier-coller la réponse ? OUI
-- message d'accueil dans le chatbot ? A VOIR
 - responsive
+- ajouter un compteur de caractères sur les champs ++
+- animation texte accueil rond + fadein ++
 
 => lss
 - validation du formulaire côté client et serveur => si le champ est vide, pas d'envoi
 - ajouter la gestion des erreurs
-- ajouter un shadow sur la navbar (noir ou rose)
-
-- ajouter la possibilité pour l'utilisateur de choisir un rôle pour le chatbot afin d'avoir des réponses sur des thèmes spécifiques ? PEUT ETRE DANS LA V2 DU PROJET
-
-- API random => Robohash (il faut l'installer avec pip) NON, pas intéressé
-- Images ou Audio de openai 
+- ajouter un compteur de caractères sur les champs 
+- Audio de openai 
 https://www.datacamp.com/tutorial/converting-speech-to-text-with-the-openAI-whisper-API
+=> ajouter génération d'image via prompt dans la navbar, check branche Hilel
+- limite de caractères à 60
+<i class="fa-regular fa-image"></i> + animation beat ou beat fade
 
 FIN DU PROJET
 - nettoyer le projet des fichiers inutiles
 - compléter le README
+
+- ajouter la possibilité pour l'utilisateur de choisir un rôle pour le chatbot afin d'avoir des réponses sur des thèmes spécifiques ? PEUT ETRE DANS LA V2 DU PROJET
