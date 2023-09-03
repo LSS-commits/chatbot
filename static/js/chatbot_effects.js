@@ -54,3 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Au chargement, vérifiez la position de défilement initiale
     checkScrollPosition();
 });
+
+
+

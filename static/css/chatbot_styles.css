@@ -213,11 +213,12 @@ p.bounce {
   width: 30px;
   height: 30px;
   background-color: var(--secondary-color);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s;
 }
+
 .scroll-down-arrow:hover {
   opacity: 1;
 }
@@ -229,12 +230,19 @@ p.bounce {
 
 /* Copier reponse */
 .copy-btn {
-  background-color: var(--secondary-color);
+  display: none; 
+  background-color: #ccc;
   border: none;
-  color: #fff;
-  border-radius: 4px;
+  border-radius: 50%;
   cursor: pointer;
-  margin-left: 10px;
-  opacity: 0.8;  
+  padding: 5px 10px;
+  font-size: 0.8em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.message.bot-message:hover .copy-btn {
+  display: block;
 }
 
