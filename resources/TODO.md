@@ -20,7 +20,7 @@
 - animation texte accueil rond + fadein ++
 
 => lss
-- validation du formulaire côté client et serveur => si le champ est vide, pas d'envoi
+- validation du formulaire côté client et serveur => si le champ est vide, pas d'envoi 
 - ajouter la gestion des erreurs
 - ajouter un compteur de caractères sur les champs 
 - Audio de openai 
@@ -28,6 +28,7 @@ https://www.datacamp.com/tutorial/converting-speech-to-text-with-the-openAI-whis
 => ajouter génération d'image via prompt dans la navbar, check branche Hilel
 - limite de caractères à 60
 <i class="fa-regular fa-image"></i> + animation beat ou beat fade
+- check validation clipboard
 
 FIN DU PROJET
 - nettoyer le projet des fichiers inutiles
