@@ -1,31 +1,31 @@
-function displayMessageWordByWord(message, containerElem) {
-  const words = message.split(" ");
-  let delay = 0;
+// function displayMessageWordByWord(message, containerElem) {
+//   const words = message.split(" ");
+//   let delay = 0;
 
-  words.forEach((word) => {
-    const wordElem = document.createElement("span");
-    wordElem.classList.add("word");
-    containerElem.appendChild(wordElem);
+//   words.forEach((word) => {
+//     const wordElem = document.createElement("span");
+//     wordElem.classList.add("word");
+//     containerElem.appendChild(wordElem);
 
-    // Divisez chaque mot en lettres
-    const letters = word.split("");
-    let letterIndex = 0;
+//     // Divisez chaque mot en lettres
+//     const letters = word.split("");
+//     let letterIndex = 0;
 
-    const displayLetterInterval = setInterval(() => {
-      if (letterIndex < letters.length) {
-        wordElem.textContent +=
-          letters[letterIndex] +
-          (letterIndex === letters.length - 1 ? " " : "");
-        wordElem.classList.add("visible");
-        letterIndex++;
-      } else {
-        clearInterval(displayLetterInterval);
-      }
-    }, 100); // Affichez chaque lettre tous les 100ms
+//     const displayLetterInterval = setInterval(() => {
+//       if (letterIndex < letters.length) {
+//         wordElem.textContent +=
+//           letters[letterIndex] +
+//           (letterIndex === letters.length - 1 ? " " : "");
+//         wordElem.classList.add("visible");
+//         letterIndex++;
+//       } else {
+//         clearInterval(displayLetterInterval);
+//       }
+//     }, 100); // Affichez chaque lettre tous les 100ms
 
-    delay += (word.length + 1) * 100; // Incrémentez le délai en fonction du nombre de lettres
-  });
-}
+//     delay += (word.length + 1) * 100; // Incrémentez le délai en fonction du nombre de lettres
+//   });
+// }
 
 // Flèche de scroll vers le bas
 document.addEventListener("DOMContentLoaded", function () {
@@ -61,5 +61,5 @@ document.addEventListener("DOMContentLoaded", function () {
   checkScrollPosition();
 });
 
-// let answerId
+
 

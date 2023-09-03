@@ -45,17 +45,10 @@
       <div class="custom-container">
         <div class="chat-header">
           <h1>ChatBot</h1>
-          <p>Comment puis-je vous aider?</p>
+          <!-- <p id="pAlone">Comment puis-je vous aider?</p> -->
         </div>
         <div class="chat-container">
-          <div class="response-area" id="responseArea">
-
-            <!-- The button used to copy the text -->
-          <!-- <button onclick="myFunction()">Copy</button> -->
-          </div>
-
-          
-
+          <div class="response-area" id="responseArea"></div>
           <div class="input-area">
             <input
               type="text"
@@ -66,7 +59,7 @@
             <button id="sendButton">
               <i class="fa fa-paper-plane" aria-hidden="true"></i>
             </button>
-            <!-- <div class="loading-indicator" id="loadingIndicator"></div> -->
+            <div class="loadingDots" id="loadingDots">...</div>
             <!-- Scroll Bas -->
             <div class="scroll-down-arrow" id="scrollArrow">
               <i class="fa-solid fa-arrow-down"></i>
