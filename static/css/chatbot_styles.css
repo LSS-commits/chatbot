@@ -208,6 +208,20 @@ body {
   font-weight: 600;
 }
 
+.btnCopy{
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnCopy .fa-clipboard-check{
+  color: rgba(127, 255, 212, 0.767);
+  margin-left: 5px;
+}
+
 /* Scroll personnalisé */
 .response-area::-webkit-scrollbar {
   width: 10px;

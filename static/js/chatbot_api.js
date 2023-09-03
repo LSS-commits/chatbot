@@ -24,7 +24,7 @@ function sendMessage() {
     .then(response => response.json())
     .then(data => {
         answerNumber += 1;
-        responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
+        responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
 
         // copier dans le presse-papiers
         var btnEl = document.getElementById("btnNumber" + answerNumber);
@@ -38,6 +38,7 @@ function sendMessage() {
                     btnEl.innerHTML = 'Copié avec succès <i id="clipboardIcon" class="fa-solid fa-clipboard-check"></i>'
                 })
                 .catch(err => {
+                    // TODO: faire validation erreur
                     console.error("Erreur lors de la copie du texte: ", err);
                 });
             }
