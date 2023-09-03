@@ -90,7 +90,7 @@ p.bounce {
   animation: bounce 2s;
 }
 
-.container {
+.container-general {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,17 +187,14 @@ p.bounce {
 .response-area::-webkit-scrollbar {
   width: 10px;
 }
-
 .response-area::-webkit-scrollbar-track {
   background: var(--primary-color);
   border-radius: 5px;
 }
-
 .response-area::-webkit-scrollbar-thumb {
   background: var(--secondary-color);
   border-radius: 5px;
 }
-
 .response-area::-webkit-scrollbar-thumb:hover {
   opacity: 0.8;
 }
@@ -207,3 +204,37 @@ p.bounce {
   scrollbar-width: thin; /* Firefox */
   scrollbar-color: var(--secondary-color) var(--primary-color);
 }
+
+/* Acceder au bas du message */
+.scroll-down-arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--secondary-color);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.scroll-down-arrow:hover {
+  opacity: 1;
+}
+/* Cachez la flèche lorsque l'utilisateur est en bas de la zone de réponse */
+.scroll-down-arrow.hidden {
+  display: none;
+}
+
+
+/* Copier reponse */
+.copy-btn {
+  background-color: var(--secondary-color);
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  opacity: 0.8;  
+}
+

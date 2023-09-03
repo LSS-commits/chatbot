@@ -1,83 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
 
     <!-- FAVICON -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../static/assets/picto_rose.png"
-    />
+    <link rel="icon" type="image/x-icon" href="../static/assets/picto_rose.png">
 
     <!-- ICONES (FontAwesome) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
 
     <!-- BOOTSTRAP CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+          crossorigin="anonymous">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <link rel="stylesheet" href="../static/css/chatbot_styles.css" />
-    <link rel="stylesheet" href="../static/css/responsive.css" />
-  </head>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/chatbot_styles.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+</head>
 
-  <body>
-    <!-- Composant barre de navigation -->
+<body>
+    <!-- Navbar -->
     <my-nav></my-nav>
 
-    <!-- Container principal de la page -->
+    <h3>Test</h3>
+    <!-- Main Content -->
     <main>
-      <!-- Section de Chatbot -->
-      <div class="container">
-        <div class="chat-header">
-          <h1>ChatBot</h1>
-          <p>Comment puis-je vous aider?</p>
+        <!-- Chatbot Section -->
+        <div class="container-general">
+            <div class="chat-header">
+                <h1>ChatBot</h1>
+                <p>Comment puis-je vous aider?</p>
+            </div>
+            <div class="chat-container">
+                <div class="response-area" id="responseArea"></div>
+                <!-- Scroll Down Arrow -->
+                <div class="scroll-down-arrow" id="scrollArrow"></div>
+                <div class="input-area">
+                    <input type="text" id="userInput" placeholder="Ecrivez votre message..." required>
+                    <button id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+            </div>
         </div>
-        <div class="chat-container">
-          <div class="response-area" id="responseArea"></div>
-          <div class="input-area">
-            <input
-              type="text"
-              id="userInput"
-              placeholder="Ecrivez votre message..."
-              required
-            />
-            <button id="sendButton">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-            </button>
-          </div>
-        </div>
-      </div>
     </main>
 
-    <!-- Composant footer -->
+    <!-- Footer -->
     <my-footer></my-footer>
 
-    <!-- Scripts Bootstrap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+            crossorigin="anonymous"></script>
 
-    <!-- Scripts -->
+    <!-- Custom Scripts -->
     <script src="../static/js/webcomponents.js"></script>
     <script src="../static/js/chatbot_api.js"></script>
     <script src="../static/js/misc_api.js"></script>
-    <script src="../static/js/chatbot_effects.js"></script>
-  </body>
+    <script defer src="/static/js/chatbot_effects.js"></script>
+</body>
+
 </html>
