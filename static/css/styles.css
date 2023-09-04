@@ -138,6 +138,33 @@ a {
     opacity: 0.8
 }
 
+/* Modal style animation "..." */
+@keyframes loadingDotsImg {
+    0%,
+    100% {
+      color: rgba(0, 0, 0, 0)
+    }
+    20% {
+      color: rgb(255, 192, 223)
+      /* Rose clair */
+    }
+    40% {
+      color: rgba(0, 0, 0, 0)
+    }
+    60% {
+      color: rgba(0, 0, 0, 0)
+    }
+    80% {
+      color: rgba(0, 0, 0, 0)
+    }
+  }
+  .loadingDotsImg {
+    display: none;
+    font-size: 3rem;
+    content: "...";
+    animation: loadingDotsImg 1.5s infinite;
+    margin-left: 5px
+  }
 
 /* Messages d'erreur */
 .error-user-img,

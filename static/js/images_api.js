@@ -44,6 +44,10 @@ function sendMessageImg() {
     errorAPIImg.classList.remove('show-error-img');
     errorAPIImg.innerHTML = '';
 
+    // Animation d'attente de réponse
+    const loadingDotsImg = document.querySelector('#loadingDotsImg');
+    loadingDotsImg.style.display = "inline-block";
+
     // le message envoyé respecte la limite de 60 caractères
     if (imgMessage.length <= 60){
         /* envoyer les données du formulaire à la route Flask */
@@ -59,6 +63,8 @@ function sendMessageImg() {
         .then(response => response.json())
         .then(data => {
             url = Object.values(data);
+            // cachez l'animation "..."
+            loadingDotsImg.style.display = "none"; 
             // affichage en fonction de la réponse de l'API
             if (url[0] === "Message utilisateur vide") {
                 // message envoyé était vide
@@ -86,4 +92,4 @@ const sendButtonImg = document.getElementById("sendButtonImg");
 
 sendButtonImg.addEventListener("click", sendMessageImg)
 
-// TODO: ajouter loadingDots + bouton télécharger
+// TODO: ajouter bouton télécharger + limite de caractere 0/60

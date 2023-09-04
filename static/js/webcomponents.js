@@ -15,6 +15,7 @@ class MyModal extends HTMLElement {
                             <div class="error-user-img" id="errorUserImg"></div>
                             <div class="error-API-img" id="errorAPIImg"></div>
                             <div class="modal-body-text" id="modalBodyText"></div>
+                            <div class="loadingDotsImg" id="loadingDotsImg">...</div>
                             <div class="modal-body-img" id="modalBodyImg"></div>
                         </div>
                         <div class="modal-footer">
