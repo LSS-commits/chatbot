@@ -67,7 +67,7 @@ function sendMessageImg() {
             }else if(url[0] === "Erreur API"){
                 // erreur API
                 errorAPIImg.classList.add('show-error-img');
-                errorAPIImg.innerHTML = "<span>Une erreur s'est produite. Veuillez réessayer plus tard.</span>";
+                errorAPIImg.innerHTML = "<span>Une erreur s'est produite.<br>Veuillez rafraîchir la page ou réessayer plus tard.</span>";
             }else{
                 // réponse OK
                 responseAreaText.innerHTML = `<p><strong>Voici votre "` + imgMessage + `":</strong></p>`;
@@ -86,4 +86,4 @@ const sendButtonImg = document.getElementById("sendButtonImg");
 
 sendButtonImg.addEventListener("click", sendMessageImg)
 
-
+// TODO: ajouter loadingDots + bouton télécharger

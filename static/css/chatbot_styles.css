@@ -10,35 +10,33 @@ body {
   from {
     opacity: 0
   }
-
   to {
     opacity: 1
   }
 }
 
 .chat-container,
-.response-area {
+.response-area,
+.pAlone {
   animation: fadeIn 1s ease-in-out
 }
 
+/* Container général */
+.custom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+/* Chatbot header */
 .chat-header {
-  padding: 10px 20px
+  padding: 10px 20px;
+  text-align: center
 }
 
-.chat-header h2 {
-  margin: 0;
-  font-size: 1.5em;
-  color: var(--text-color)
-}
-
-.chat-header p {
-  margin: 5px 0 0;
-  font-size: 1em;
-  color: var(--text-color)
-}
-
+/* animation sur le titre */
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -46,70 +44,26 @@ body {
   100% {
     transform: translateY(0)
   }
-
   40% {
     transform: translateY(-30px)
   }
-
   60% {
     transform: translateY(-15px)
   }
 }
-
-.chat-header h2,
-p.bounce {
+.chat-header h1 {
+  margin: 0;
   animation: bounce 2s
 }
 
-
-.custom-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.chat-header p {
+  margin: 5px 0 0;
+  font-size: 1em;
 }
+/* Fin Chatbot header */
 
-/* Animation de chargement réponse '...' */
-@keyframes loadingDots {
-  0% {
-    content: "."
-  }
 
-  33% {
-    content: ".."
-  }
-
-  66% {
-    content: "..."
-  }
-
-  100% {
-    content: ""
-  }
-}
-
-/* Animation affichage réponse */
-@keyframes slideInFromBottom {
-  from {
-    transform: translateY(20%);
-    opacity: 0
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1
-  }
-}
-
-.response-area .message {
-  animation: slideInFromBottom 0.5s ease-in-out
-}
-
-.loading::after {
-  content: "";
-  animation: loadingDots 1s infinite
-}
-
+/* Container des réponses */
 .chat-container {
   background-color: #fff;
   border-radius: 8px;
@@ -122,9 +76,66 @@ p.bounce {
   height: 300px;
   border-bottom: 1px solid #eee;
   padding: 20px;
-  overflow-y: auto
+  overflow-y: auto;
+  overflow-wrap: break-word
 }
 
+
+.btnCopy {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px 0
+}
+
+.btnCopy .fa-clipboard-check {
+  color: rgba(127, 255, 212, 0.767);
+  margin-left: 5px
+}
+
+/* Scroll personnalisé */
+.response-area::-webkit-scrollbar {
+  width: 10px
+}
+.response-area::-webkit-scrollbar-track {
+  background: var(--primary-color);
+  border-radius: 5px
+}
+.response-area::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px
+}
+.response-area::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(251, 89, 159, 0.494)
+}
+/* Navigateurs pas sur WebKit */
+.response-area {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--secondary-color) var(--primary-color)
+}
+
+/* retirer la marge sur la balise de réponse et l'ajouter plutôt sur le bouton */
+.chatbotAnswer {
+  margin: 0
+}
+
+/* Copier réponse dans le presse-papiers */
+.copy-btn {
+  cursor: pointer;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 10px;
+  display: none 
+  /* Initial state hidden */
+}
+/* Fin Container des réponses */
+
+/* Zone du formulaire */
 .input-area {
   display: flex;
   align-items: center;
@@ -156,13 +167,53 @@ p.bounce {
 }
 
 .input-area button:hover {
-  opacity: 0.8;
-  font-weight: 600
+  opacity: 0.8
 }
+
+/* Accéder au bas du message */
+.scroll-down-arrow {
+  padding: 10px;
+  color: var(--secondary-color);
+  cursor: pointer
+}
+/* Cachez la flèche lorsque l'utilisateur est en bas de la zone de réponse */
+.scroll-down-arrow.hidden {
+  display: none
+}
+
+/* Animation de chargement réponse '...' */
+@keyframes loadingDots {
+  0%,
+  100% {
+    color: rgba(0, 0, 0, 0)
+  }
+  20% {
+    color: rgb(255, 192, 223)
+    /* Rose clair */
+  }
+  40% {
+    color: rgba(0, 0, 0, 0)
+  }
+  60% {
+    color: rgba(0, 0, 0, 0)
+  }
+  80% {
+    color: rgba(0, 0, 0, 0)
+  }
+}
+.loadingDots {
+  display: none;
+  font-size: 2em;
+  content: "...";
+  animation: loadingDots 1.5s infinite;
+  margin-left: 5px
+}
+/* Fin Zone du formulaire */
 
 
 /* Messages d'erreur */
-.error-user, .error-API{
+.error-user, 
+.error-API {
   display: none;
   width: 400px;
   margin: 30px auto 0;
@@ -170,20 +221,23 @@ p.bounce {
   border-radius: 5px;
   text-align: center
 }
+
 .error-user {
   background-color: var(--error-color-red)
 }
+
 .error-API {
   background-color: var(--error-color-orange)
 }
 
+
 @keyframes smoothShow {
   from {
-      opacity: 0;
+      opacity: 0
   }
 
   to {
-      opacity: 1;
+      opacity: 1
   }
 }
 
@@ -192,3 +246,4 @@ p.bounce {
   display: block;
   animation: smoothShow 1s ease
 }
+/* Fin Messages d'erreur */

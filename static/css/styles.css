@@ -13,7 +13,7 @@
     --box-shadow: rgba(23, 23, 23, 0.35) 0px 10px 20px;
     --box-shadow-secondary: rgba(226, 119, 205, 0.35) 0px 10px 20px;
     --error-color-red: rgba(255, 0, 77, 0.468);
-    --error-color-orange: rgba(255, 115, 0, 0.468);
+    --error-color-orange: rgba(255, 115, 0, 0.468)
 }
 
 /* impossible de sélectionner le texte de l'élément et celui de ses descendants. */
@@ -37,8 +37,6 @@ a {
 }
 
 .btn-primary {
-    /* background-color: var(--text-color);
-    color: var(--secondary-color); */
     background-color: var(--secondary-color);
     color: #fff;
     transition: all .3s;
@@ -51,19 +49,17 @@ a {
 }
 
 .btn-primary:active {
-    background-color: var(--secondary-color) !important;
+    background-color: var(--secondary-color) !important
 }
 
 .btn-primary:disabled {
-    background-color: var(--secondary-color) !important;
+    background-color: var(--secondary-color) !important
 }
 
 /*** BARRE DE NAVIGATION ***/
 .navbar {
     background-color: var(--text-color);
     box-shadow: var(--box-shadow)
-        /* OU box-shadow rose */
-        /* box-shadow: var(--box-shadow-secondary) */
 }
 
 /* logo et bouton toggle restent alignés sur tous les écrans */
@@ -94,16 +90,16 @@ a {
 /* générateur d'images */
 .navbar .input-area-img {
     display: none;
-    /* display: flex; */
     align-items: center
 }
-.navbar .toggle-out{
+
+.navbar .toggle-out {
     display: none
 }
 
 .navbar .input-area-img .first-letter {
     color: var(--secondary-color);
-    font-size: 1.5rem;
+    font-size: 1.5rem
 }
 
 .navbar .input-area-img span {
@@ -135,7 +131,7 @@ a {
 }
 
 .navbar .input-area-img button i {
-    font-size: 1.5rem;
+    font-size: 1.5rem
 }
 
 .navbar .input-area-img button:hover {
@@ -164,11 +160,11 @@ a {
 
 @keyframes smoothShow1 {
     from {
-        opacity: 0;
+        opacity: 0
     }
 
     to {
-        opacity: 1;
+        opacity: 1
     }
 }
 
@@ -215,5 +211,34 @@ footer ul a:hover {
 
 /*** PAGE D'ACCUEIL ***/
 .start-btn {
-    color: var(--text-color);
+    color: var(--text-color)
 }
+
+/* Curseur animation accueil */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.cursor {
+    background-color: var(--secondary-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+    overflow: hidden;
+    box-shadow: 0 0 5px 2px rgba(255, 105, 180, 0.6);
+    /* Ombre rose tout autour */
+}
+

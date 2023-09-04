@@ -1,42 +1,84 @@
 /* MEDIA QUERIES */
-
 @media screen and (max-width: 991px) {
-    /* navbar : formulaire du générateur d'images en colonne */
-    .navbar .input-area-img {
-        flex-direction: column;
-    } 
-    .navbar .input-area-img span, 
-    .navbar .input-area-img input,
-    .navbar .input-area-img button {
-        margin: 10px 0;
-    }
+
+  /* navbar : formulaire du générateur d'images en colonne */
+  .navbar .input-area-img {
+    flex-direction: column
+  }
+
+  .navbar .input-area-img span,
+  .navbar .input-area-img input,
+  .navbar .input-area-img button {
+    margin: 10px 0
+  }
 }
 
+/* Ecrans tablette */
 @media screen and (max-width: 768px) {
-    /* page d'accueil : image de présentation prend la même largeur que le texte sur les petits écrans */
-    .presentationImgContainer {
-        flex: 1
-    }
+
+  /* page d'accueil : image de présentation prend la même largeur que le texte sur les petits écrans */
+  .presentationImgContainer {
+    flex: 1
+  }
+
+  /* page chatbot */
+  .chat-container {
+    width: 80%
+  }
+
+  .response-area {
+    height: 200px
+  }
 }
 
 @media screen and (max-width: 568px) {
-    /* footer : centrer tous les éléments en colonne */
-    footer {
-        flex-direction: column
-    }
-    .footerLogo {
-       margin-right: 0 !important
-    }
-    footer span {
-        margin-top: 5px;
-        text-align: center
-    }
-    footer ul {
-        margin-left: 0;
-        padding: 0;
-        text-align: center
-    }
-    footer ul li {
-        margin: 0 10px 0 10px !important
-    }
+
+  /* footer : centrer tous les éléments en colonne */
+  footer {
+    flex-direction: column
+  }
+
+  .footerLogo {
+    margin-right: 0 !important
+  }
+
+  footer span {
+    margin-top: 5px;
+    text-align: center
+  }
+
+  footer ul {
+    margin-left: 0;
+    padding: 0;
+    text-align: center
+  }
+
+  footer ul li {
+    margin: 0 10px 0 10px !important
+  }
+}
+
+/* Ecrans mobile */
+@media screen and (max-width: 480px) {
+  /* page chatbot */
+  .chat-container {
+    width: 95%
+  }
+
+  .chat-header h1 {
+    font-size: 1.5em
+  }
+
+  .response-area {
+    height: 150px
+  }
+
+  .input-area input {
+    flex-grow: 1;
+    width: 60%
+  }
+
+  .input-area button {
+    width: 35%
+  }
 }
