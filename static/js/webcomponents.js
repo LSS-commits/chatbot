@@ -11,6 +11,9 @@ class MyModal extends HTMLElement {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" id="modalBody">
+                            <!-- Messages d'erreur -->
+                            <div class="error-user-img" id="errorUserImg"></div>
+                            <div class="error-API-img" id="errorAPIImg"></div>
                             <div class="modal-body-text" id="modalBodyImg"></div>
                         </div>
                         <div class="modal-footer">

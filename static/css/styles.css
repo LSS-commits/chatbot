@@ -16,6 +16,25 @@
     --error-color-orange: rgba(255, 115, 0, 0.468);
 }
 
+/* ANIMATIONS ET CLASSES REUTILISABLES */
+/*  */
+@keyframes smoothShow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ajouter la classe en js */
+.show-error {
+    display: block;
+    animation: smoothShow 1s ease
+}
+
+
 /* impossible de sélectionner le texte de l'élément et celui de ses descendants. */
 * {
     user-select: none;
@@ -49,9 +68,11 @@ a {
     background-color: var(--secondary-color);
     opacity: .8
 }
+
 .btn-primary:active {
     background-color: var(--secondary-color) !important;
 }
+
 .btn-primary:disabled {
     background-color: var(--secondary-color) !important;
 }
@@ -60,8 +81,8 @@ a {
 .navbar {
     background-color: var(--text-color);
     box-shadow: var(--box-shadow)
-    /* OU box-shadow rose */
-    /* box-shadow: var(--box-shadow-secondary) */
+        /* OU box-shadow rose */
+        /* box-shadow: var(--box-shadow-secondary) */
 }
 
 /* logo et bouton toggle restent alignés sur tous les écrans */
@@ -83,7 +104,8 @@ a {
     transition: all .3s;
     cursor: pointer
 }
-.navbar .nav-item:hover{
+
+.navbar .nav-item:hover {
     opacity: .8
 }
 
@@ -92,25 +114,30 @@ a {
     display: flex;
     align-items: center;
 }
+
 .navbar .input-area-img h5 {
     color: var(--secondary-color);
     margin: 0 20px 0 10px
 }
+
 .navbar .input-area-img span {
     color: #fff;
     font-size: 1rem;
     margin: 0 20px 0 10px
 }
+
 .navbar .input-area-img input {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #eee;
     border-radius: 4px
 }
+
 .navbar .input-area-img input:focus {
     outline: none;
     border-color: var(--secondary-color)
 }
+
 .navbar .input-area-img button {
     padding: 10px 15px;
     margin-left: 10px;
@@ -120,12 +147,35 @@ a {
     border-radius: 4px;
     transition: all .3s
 }
+
 .navbar .input-area-img button i {
     font-size: 1.5rem;
 }
+
 .navbar .input-area-img button:hover {
     opacity: 0.8
 }
+
+
+/* Messages d'erreur */
+.error-user-img,
+.error-API-img {
+    display: none;
+    width: 400px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center
+}
+
+.error-user-img {
+    background-color: var(--error-color-red)
+}
+
+.error-API-img {
+    background-color: var(--error-color-orange)
+}
+
 
 /*** FOOTER ***/
 footer {

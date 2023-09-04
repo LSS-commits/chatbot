@@ -176,19 +176,3 @@ p.bounce {
 .error-API {
   background-color: var(--error-color-orange)
 }
-
-@keyframes smoothShow {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* ajouter la classe en js */
-.show-error {
-  display: block;
-  animation: smoothShow 1s ease
-}
