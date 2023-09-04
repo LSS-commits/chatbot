@@ -18,13 +18,11 @@ function sendMessage() {
     // vider le champ utilisateur
     document.getElementById('userInput').value = '';
 
-<<<<<<< HEAD
     // TODO: validation du formulaire, pas d'input vide
     sendButton.style.display="none";
     loadingDots.style.display="block";
 
     
-=======
     // réinitialiser les containers d'erreurs
     errorUser.classList.remove('show-error');
     errorUser.innerHTML = '';
@@ -38,7 +36,6 @@ function sendMessage() {
         responseArea.innerHTML += '<p><strong>Vous :</strong> ' + message + '</p>';
     }
 
->>>>>>> lss
     /* envoyer les données du formulaire à la route Flask */
     fetch('/postDataChatbot', {
         method: 'POST',
@@ -51,7 +48,6 @@ function sendMessage() {
     /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
     .then(response => response.json())
     .then(data => {
-<<<<<<< HEAD
         answerNumber += 1;
         responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
         
@@ -75,7 +71,6 @@ function sendMessage() {
                 });
             }
         })
-=======
         // affichage en fonction de la réponse de l'API
         if (data.message === "Message utilisateur vide") {
             // message envoyé était vide
@@ -89,7 +84,6 @@ function sendMessage() {
             // réponse OK
             responseArea.innerHTML += '<p><strong>Chatbot :</strong> ' + data.message + '</p>';    
         }
->>>>>>> lss
     });
     
 }
