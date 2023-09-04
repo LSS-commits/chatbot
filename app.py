@@ -86,7 +86,6 @@ def postDataImage():
 
         # l'entrée utilisateur n'est pas vide ou ne contient pas que des espaces
         if userMessage != '' and len(userMessage) != 0 and userMessage.isspace() == False:
-
             if userMessage:
                 image = openai.Image.create(
                     prompt = userMessage,

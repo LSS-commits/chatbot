@@ -4,8 +4,7 @@
     /* navbar : formulaire du générateur d'images en colonne */
     .navbar .input-area-img {
         flex-direction: column;
-    }
-    .navbar .input-area-img h5, 
+    } 
     .navbar .input-area-img span, 
     .navbar .input-area-img input,
     .navbar .input-area-img button {

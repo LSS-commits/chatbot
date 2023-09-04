@@ -49,9 +49,11 @@ a {
     background-color: var(--secondary-color);
     opacity: .8
 }
+
 .btn-primary:active {
     background-color: var(--secondary-color) !important;
 }
+
 .btn-primary:disabled {
     background-color: var(--secondary-color) !important;
 }
@@ -60,8 +62,8 @@ a {
 .navbar {
     background-color: var(--text-color);
     box-shadow: var(--box-shadow)
-    /* OU box-shadow rose */
-    /* box-shadow: var(--box-shadow-secondary) */
+        /* OU box-shadow rose */
+        /* box-shadow: var(--box-shadow-secondary) */
 }
 
 /* logo et bouton toggle restent alignés sur tous les écrans */
@@ -83,34 +85,45 @@ a {
     transition: all .3s;
     cursor: pointer
 }
-.navbar .nav-item:hover{
+
+.navbar .nav-item:hover {
     opacity: .8
 }
 
+
 /* générateur d'images */
 .navbar .input-area-img {
-    display: flex;
-    align-items: center;
+    display: none;
+    /* display: flex; */
+    align-items: center
 }
-.navbar .input-area-img h5 {
+.navbar .toggle-out{
+    display: none
+}
+
+.navbar .input-area-img .first-letter {
     color: var(--secondary-color);
-    margin: 0 20px 0 10px
+    font-size: 1.5rem;
 }
+
 .navbar .input-area-img span {
     color: #fff;
     font-size: 1rem;
     margin: 0 20px 0 10px
 }
+
 .navbar .input-area-img input {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #eee;
     border-radius: 4px
 }
+
 .navbar .input-area-img input:focus {
     outline: none;
     border-color: var(--secondary-color)
 }
+
 .navbar .input-area-img button {
     padding: 10px 15px;
     margin-left: 10px;
@@ -120,11 +133,49 @@ a {
     border-radius: 4px;
     transition: all .3s
 }
+
 .navbar .input-area-img button i {
     font-size: 1.5rem;
 }
+
 .navbar .input-area-img button:hover {
     opacity: 0.8
+}
+
+
+/* Messages d'erreur */
+.error-user-img,
+.error-API-img {
+    display: none;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center
+}
+
+.error-user-img {
+    background-color: var(--error-color-red)
+}
+
+.error-API-img {
+    background-color: var(--error-color-orange)
+}
+
+@keyframes smoothShow1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ajouter la classe en js */
+.show-error-img {
+    display: block;
+    animation: smoothShow1 1s ease
 }
 
 /*** FOOTER ***/
@@ -164,5 +215,10 @@ footer ul a:hover {
 
 /*** PAGE D'ACCUEIL ***/
 .start-btn {
+<<<<<<< HEAD
     color: var(--text-color)
 }
+=======
+    color: var(--text-color);
+}
+>>>>>>> origin/lss

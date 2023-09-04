@@ -21,9 +21,12 @@ Liste d'APIs :
 https://publicapis.io/
 https://apipheny.io/free-api/
 
-Advice slip : 
+Advice slip (en anglais): 
 https://publicapis.io/advice-slip-api
 https://api.adviceslip.com/advice
+
+Générateur de blagues (en anglais):
+https://official-joke-api.appspot.com/random_joke
 
 Robohash :
 https://robohash.org/
