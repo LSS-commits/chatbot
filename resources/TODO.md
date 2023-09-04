@@ -27,10 +27,12 @@
  et serveur => si le champ est vide ou ne contient que des espaces + erreurs API OK
 - Images de openai 
 => ajouter génération d'image via prompt dans la navbar, check branche Hilel
-- limite de caractères à 60 HTML OK, JS
+- limite de caractères à 60 HTML OK, 
+JS OK, 
+TODO: côté serveur 
 <i class="fa-regular fa-image"></i> + animation beat ou bounce OK
 
-- permettre de télécharger l'image
+- permettre de télécharger l'image => NOPE, lien généré est unique + contient un token + disponible que localement
 - enlever chgt de fond sur btn primary et forcer la couleur sur l'état actif OK
 
 - récupérer code Hilel sur branche lss
