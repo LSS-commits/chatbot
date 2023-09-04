@@ -18,6 +18,13 @@ function toggleFormOut(){
 btnToggleIn.addEventListener("click", toggleFormIn);
 btnToggleOut.addEventListener("click", toggleFormOut);
 
+// modal limite 0/60
+document.getElementById('userInputImg').addEventListener('input', function(e) {
+    console.log("input")
+    var charCount = e.target.value.length;
+    console.log(charCount)
+    document.getElementById('charCount').innerText = `${charCount}/60`;
+});
 
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
 function sendMessageImg() {
@@ -92,4 +99,4 @@ const sendButtonImg = document.getElementById("sendButtonImg");
 
 sendButtonImg.addEventListener("click", sendMessageImg)
 
-// TODO: ajouter bouton télécharger + limite de caractere 0/60
+// TODO: Limite de caractere a modifier (le cadre bouge)
