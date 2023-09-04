@@ -1,16 +1,11 @@
-/* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
-const sendButton = document.getElementById("sendButton");
-const userInput = document.getElementById("userInput");
-const loadingDots = document.getElementById("loadingDots");
-
-// incrémenteur de réponses
-var answerNumber = 0
-
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
-function sendMessage() {
-    // pour récupérer l'entrée utilisateur et l'afficher
-    const message = document.getElementById('userInput').value;
-    const responseArea = document.getElementById('responseArea');
+function sendMessageImg() {
+
+    // pour récupérer l'entrée utilisateur 
+    const message = document.getElementById('userInputImg').value;
+    const responseArea = document.getElementById('modalBody');
+    const imgArea = document.getElementById('modalBodyImg');
+    
     // pour afficher les erreurs
     const errorUser = document.getElementById('errorUser');
     const errorAPI = document.getElementById('errorAPI');
@@ -18,13 +13,6 @@ function sendMessage() {
     // vider le champ utilisateur
     document.getElementById('userInput').value = '';
 
-<<<<<<< HEAD
-    // TODO: validation du formulaire, pas d'input vide
-    sendButton.style.display="none";
-    loadingDots.style.display="block";
-
-    
-=======
     // réinitialiser les containers d'erreurs
     errorUser.classList.remove('show-error');
     errorUser.innerHTML = '';
@@ -38,7 +26,6 @@ function sendMessage() {
         responseArea.innerHTML += '<p><strong>Vous :</strong> ' + message + '</p>';
     }
 
->>>>>>> lss
     /* envoyer les données du formulaire à la route Flask */
     fetch('/postDataChatbot', {
         method: 'POST',
@@ -51,31 +38,6 @@ function sendMessage() {
     /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
     .then(response => response.json())
     .then(data => {
-<<<<<<< HEAD
-        answerNumber += 1;
-        responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
-        
-        // Remplacer btn par loadingDots
-        sendButton.style.display="block";
-        loadingDots.style.display="none";
-        
-        // copier dans le presse-papiers
-        var btnEl = document.getElementById("btnNumber" + answerNumber);
-        var answerEl = document.getElementById("answerNumber" + answerNumber);
-        btnEl.addEventListener('click', function (event) {
-            if (event.target != undefined) {
-                var copyText = answerEl.innerText;
-                navigator.clipboard.writeText(copyText)
-                .then(() => {
-                    btnEl.innerHTML = 'Copié avec succès <i id="clipboardIcon" class="fa-solid fa-clipboard-check"></i>'
-                })
-                .catch(err => {
-                    // TODO: faire validation erreur
-                    console.error("Erreur lors de la copie du texte: ", err);
-                });
-            }
-        })
-=======
         // affichage en fonction de la réponse de l'API
         if (data.message === "Message utilisateur vide") {
             // message envoyé était vide
@@ -89,11 +51,12 @@ function sendMessage() {
             // réponse OK
             responseArea.innerHTML += '<p><strong>Chatbot :</strong> ' + data.message + '</p>';    
         }
->>>>>>> lss
     });
-    
 }
 
+/* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
+const sendButton = document.getElementById("sendButton");
+const userInput = document.getElementById("userInput");
 
 function handleEvent(e){
     // si l'événement est un clic

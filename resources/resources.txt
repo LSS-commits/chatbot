@@ -33,7 +33,7 @@ https://github.com/e1ven/Robohash
 Exemple d'architecture de projet : https://github.com/shoryamalani/templates/blob/master/flask/flask-normal/app.py
 
 
-Ouvrir le navigateur automatiquement lorsque le serveur est lancé : https://stackoverflow.com/questions/54235347/open-browser-automatically-when-python-code-is-executed#54235461
+Ouvrir le navigateur automatiquement lorsque le serveur est lancé: https://stackoverflow.com/questions/54235347/open-browser-automatically-when-python-code-is-executed#54235461
 
 ### OPENAI ###
 Différence entre Completion et ChatCompletion
@@ -41,3 +41,10 @@ https://stackoverflow.com/questions/76192496/openai-v1-completions-vs-v1-chat-co
 
 Exemples de prompts ChatGPT : 
 https://github.com/f/awesome-chatgpt-prompts
+
+### VALIDATION ###
+String vide ou ne contenant que des white spaces
+Python
+https://stackoverflow.com/questions/2405292/check-if-string-contains-only-whitespace
+JS
+https://stackoverflow.com/questions/10261986/how-to-detect-string-which-contains-only-spaces
