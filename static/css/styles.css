@@ -92,10 +92,14 @@ a {
     display: flex;
     align-items: center;
 }
+.navbar .input-area-img h5 {
+    color: var(--secondary-color);
+    margin: 0 20px 0 10px
+}
 .navbar .input-area-img span {
     color: #fff;
     font-size: 1rem;
-    margin: 0 20px;
+    margin: 0 20px 0 10px
 }
 .navbar .input-area-img input {
     flex-grow: 1;

@@ -2,12 +2,13 @@
 
 @media screen and (max-width: 991px) {
     /* navbar : formulaire du générateur d'images en colonne */
-    .input-area-img {
+    .navbar .input-area-img {
         flex-direction: column;
     }
-    .input-area-img span, 
-    .input-area-img input,
-    .input-area-img button {
+    .navbar .input-area-img h5, 
+    .navbar .input-area-img span, 
+    .navbar .input-area-img input,
+    .navbar .input-area-img button {
         margin: 10px 0;
     }
 }

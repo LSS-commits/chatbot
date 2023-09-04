@@ -10,8 +10,9 @@ class MyModal extends HTMLElement {
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Les résultats peuvent être surprenants... 😨</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body" id="modalBodyJoke"></div>
-                        <div class="modal-body" id="modalBodyAdvice"></div>
+                        <div class="modal-body" id="modalBody">
+                            <div class="modal-body-text" id="modalBodyImg"></div>
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary">Télécharger <i class="fa-solid fa-download" aria-hidden="true"></i></button>
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Fermer</button>
@@ -42,7 +43,8 @@ class MyNav extends HTMLElement {
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                                 <li class="input-area-img">
                                     <!-- Formulaire du générateur d'images -->
-                                    <span>Générateur d'image par IA</span>
+                                    <h5>Img IA</h5>
+                                    <span>Générez une image avec du texte</span>
                                     <input type="text" id="userInputImg" placeholder="Décrivez votre image..." maxlength="60" required>
                                     <!-- Bouton d'envoi et de la modale -->
                                     <button id="sendButtonImg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-image" aria-hidden="true"></i></button>
