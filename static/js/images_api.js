@@ -9,17 +9,15 @@ function toggleFormIn(){
     btnToggleOut.style.display = "block";
     btnToggleIn.style.display = "none";
 }
-
 // cacher le formulaire
 function toggleFormOut(){
     imgForm.style.display = "none";
     btnToggleOut.style.display = "none";
     btnToggleIn.style.display = "block";
-
 }
-
 btnToggleIn.addEventListener("click", toggleFormIn);
 btnToggleOut.addEventListener("click", toggleFormOut);
+
 
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
 function sendMessageImg() {
@@ -72,7 +70,7 @@ function sendMessageImg() {
         }else{
             // réponse OK
             responseAreaText.innerHTML = `<p><strong>Voici votre "` + imgMessage + `":</strong></p>`;
-            imgArea.innerHTML = `<img class="rounded" src="` + url[0] + `" alt="image générée">`;    
+            imgArea.innerHTML = `<img class="rounded" src="` + url[0] + `" alt="image générée">`;  
         }
     });
 }
