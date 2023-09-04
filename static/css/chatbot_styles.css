@@ -1,27 +1,3 @@
-/* STYLE DE LA PAGE CHATBOT */
-/* body {
-    margin: 0;
-    background-color: var(--background-color);
-    color: var(--text-color)
-}
-
-/* Chatbot */
-/* .chat-header {
-    padding: 10px 20px
-}
-
-.chat-header h1 {
-    margin: 0;
-    font-size: 1.5em
-}
-
-.chat-header p {
-    margin: 5px 0 0;
-    font-size: 1em
-} */
-
-
-
 /* Général avec effet keyframe fondu en arrivée */
 body {
   margin: 0;
@@ -175,6 +151,7 @@ p.bounce {
   background-color: var(--secondary-color);
   color: #fff;
   border-radius: 4px;
+  transition: all .3s;
   cursor: pointer
 }
 

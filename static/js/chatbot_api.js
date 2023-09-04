@@ -24,7 +24,7 @@ function sendMessage() {
     }
 
     /* envoyer les données du formulaire à la route Flask */
-    fetch('/postData', {
+    fetch('/postDataChatbot', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

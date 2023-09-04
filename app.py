@@ -36,9 +36,9 @@ def index():
     return render_template('index.html')
 
 
-# définition de la route pour le point de terminaison du chatbot où les demandes POST seront envoyées (soumission du formulaire)
-@app.route('/postData', methods=["POST"])
-def postData():
+# définition de la route pour le point de terminaison du chatbot, où les demandes POST seront envoyées (soumission du formulaire)
+@app.route('/postDataChatbot', methods=["POST"])
+def postDataChatbot():
     try:
         # entrée de l'utilisateur
         data = request.get_json()
@@ -76,7 +76,38 @@ def postData():
         logging.error("Une erreur s'est produite: %s", e)
         return {'message': "Erreur API"}
 
-    
+# définition de la route pour le point de terminaison de la génération d'images, où les demandes POST seront envoyées (soumission du formulaire)
+@app.route('/postDataImage', methods=["POST"])
+def postDataImage():
+    try:
+        # entrée de l'utilisateur
+        data = request.get_json()
+        userMessage = data['message']
+
+        # l'entrée utilisateur n'est pas vide ou ne contient pas que des espaces
+        if userMessage != '' and len(userMessage) != 0 and userMessage.isspace() == False:
+
+            if userMessage:
+                image = openai.Image.create(
+                    prompt = userMessage,
+                    n = 1,
+                    size = "256x256"
+                )
+
+            # réponse de l'API
+            replyImg = image.data[0].url
+
+            # retourner le message au client (navigateur) pour l'afficher
+            return { 'image': replyImg }
+        else:
+            # si le champ est vide ou ne contient que des espaces
+            print("Message utilisateur vide")
+            return {'message': "Message utilisateur vide"}
+
+    except Exception as e:
+        # erreur API
+        logging.error("Une erreur s'est produite: %s", e)
+        return {'message': "Erreur API"}
 
 # définition de la route d'affichage de l'interface du chatbot
 @app.route('/chatbot')
