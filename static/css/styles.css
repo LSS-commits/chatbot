@@ -16,25 +16,6 @@
     --error-color-orange: rgba(255, 115, 0, 0.468);
 }
 
-/* ANIMATIONS ET CLASSES REUTILISABLES */
-/*  */
-@keyframes smoothShow {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* ajouter la classe en js */
-.show-error {
-    display: block;
-    animation: smoothShow 1s ease
-}
-
-
 /* impossible de sélectionner le texte de l'élément et celui de ses descendants. */
 * {
     user-select: none;
@@ -109,10 +90,15 @@ a {
     opacity: .8
 }
 
+
 /* générateur d'images */
 .navbar .input-area-img {
-    display: flex;
-    align-items: center;
+    display: none;
+    /* display: flex; */
+    align-items: center
+}
+.navbar .toggle-out{
+    display: none
 }
 
 .navbar .input-area-img h5 {
@@ -162,7 +148,7 @@ a {
 .error-API-img {
     display: none;
     width: 400px;
-    margin: 30px auto 0;
+    margin: 0 auto;
     padding: 20px;
     border-radius: 5px;
     text-align: center
@@ -176,6 +162,21 @@ a {
     background-color: var(--error-color-orange)
 }
 
+@keyframes smoothShow1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ajouter la classe en js */
+.show-error-img {
+    display: block;
+    animation: smoothShow1 1s ease
+}
 
 /*** FOOTER ***/
 footer {
