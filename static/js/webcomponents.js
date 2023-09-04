@@ -46,8 +46,7 @@ class MyNav extends HTMLElement {
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                                 <li class="input-area-img" id="imgForm">
                                     <!-- Formulaire du générateur d'images -->
-                                    <h5>Img IA</h5>
-                                    <span>Générez une image avec du texte</span>
+                                    <span><strong class="first-letter">G</strong>énérateur d'image par IA</span>
                                     <input type="text" id="userInputImg" placeholder="Décrivez votre image..." maxlength="60" required>
                                     <!-- Bouton d'envoi et de la modale -->
                                     <button id="sendButtonImg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-image" aria-hidden="true"></i></button>

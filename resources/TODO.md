@@ -32,10 +32,13 @@ JS OK,
 TODO: côté serveur 
 <i class="fa-regular fa-image"></i> + animation beat ou bounce OK
 
-- permettre de télécharger l'image => NOPE, lien généré est unique + contient un token + disponible que localement
+- TODO: permettre de télécharger l'image => 
+https://stackoverflow.com/questions/30694433/how-to-give-browser-save-image-as-option-to-button
+
 - enlever chgt de fond sur btn primary et forcer la couleur sur l'état actif OK
 
 - récupérer code Hilel sur branche lss
+- ajouter loadingDots dans modale
 - check validation clipboard (retirer le console.error)
 - retirer "chatbot :" de la réponse copiée
 - placer la responseArea au niveau du début de la nouvelle réponse ++
