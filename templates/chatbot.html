@@ -1,98 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chatbot</title>
 
-    <!-- FAVICON -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../static/assets/picto_rose.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot</title>
 
-    <!-- ICONES (FontAwesome) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="../static/assets/picto_rose.png" />
 
-    <!-- BOOTSTRAP CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
+  <!-- ICONES (FontAwesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <link rel="stylesheet" href="../static/css/chatbot_styles.css" />
-    <link rel="stylesheet" href="../static/css/responsive.css" />
-  </head>
+  <!-- BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
 
-  <body>
-    <!-- Navbar -->
-    <my-nav></my-nav>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../static/css/styles.css" />
+  <link rel="stylesheet" href="../static/css/chatbot_styles.css" />
+  <link rel="stylesheet" href="../static/css/responsive.css" />
+</head>
 
-    <!-- Main Content -->
-    <main>
+<body>
+  <!-- Navbar -->
+  <my-nav></my-nav>
 
-        <!-- Chatbot -->
-        <div class="custom-container">
-            <div class="chat-header">
-                <h1>ChatBot</h1>
-                <p>Comment puis-je vous aider?</p>
+  <!-- Main Content -->
+  <main>
 
-                <!-- Messages d'erreur -->
-                <div class="error-user" id="errorUser"></div>
-                <div class="error-API" id="errorAPI"></div>
+    <!-- Chatbot -->
+    <div class="custom-container">
+      <div class="chat-header">
+        <h1>ChatBot</h1>
+        <p class="pAlone">Comment puis-je vous aider?</p>
+        <!-- Messages d'erreur -->
+        <div class="error-user" id="errorUser"></div>
+        <div class="error-API" id="errorAPI"></div>
+      </div>
 
-            </div>
-
-            <div class="chat-container">
-                <div class="response-area" id="responseArea"></div>
-                <div class="input-area">
-                    <!-- TODO: textarea au lieu d'input OU limiter le nombre de caractères côté client (réponses plus rapides) -->
-                    <input type="text" id="userInput" placeholder="Ecrivez votre message..." required>
-                    <button id="sendButton">
-                      <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    </button>
-                    <div class="loadingDots" id="loadingDots">...</div>
-                    <!-- Scroll Bas -->
-                    <div class="scroll-down-arrow" id="scrollArrow">
-                      <i class="fa-solid fa-arrow-down"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-
+      <div class="chat-container">
+        <div class="response-area" id="responseArea"></div>
+        <div class="input-area">
+          <!-- TODO: textarea au lieu d'input OU limiter le nombre de caractères côté client (réponses plus rapides) -->
+          <input type="text" id="userInput" placeholder="Ecrivez votre message..." required>
+          <button id="sendButton">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
+          <div class="loadingDots" id="loadingDots">...</div>
+          <!-- Scroll Bas -->
+          <div class="scroll-down-arrow" id="scrollArrow">
+            <i class="fa-solid fa-arrow-down"></i>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    
-    <!-- Composant footer -->
-    <my-footer></my-footer>
 
-    <!-- Bootstrap Scripts -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Composant footer -->
+  <my-footer></my-footer>
 
-    <!-- Custom Scripts -->
-    <script src="/static/js/chatbot_effects.js"></script>
-    <script src="../static/js/webcomponents.js"></script>
-    <script src="../static/js/chatbot_api.js"></script>
-    <script src="../static/js/misc_api.js"></script>
-  </body>
+  <!-- Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom Scripts -->
+  <script src="../static/js/webcomponents.js"></script>
+  <script src="../static/js/chatbot_effects.js"></script>
+  <script src="../static/js/chatbot_api.js"></script>
+  <script src="../static/js/images_api.js"></script>
+</body>
+
 </html>

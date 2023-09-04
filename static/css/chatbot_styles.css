@@ -89,17 +89,7 @@ body {
   margin-left: 5px;
 }
 
-/* Animation affichage réponse */
-/* @keyframes slideInFromBottom {
-  from {
-    transform: translateY(20%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-} */
+
 
 .chatbotAnswer {
   margin: 0;
