@@ -185,13 +185,19 @@ p.bounce {
 
 
 /* Messages d'erreur */
-.error-container {
-  background-color: var(--error-color);
+.error-user, .error-API{
+  display: none;
   width: 400px;
-  /* margin: 30px auto 0; */
-  /* padding: 20px; */
+  margin: 30px auto 0;
+  padding: 20px;
   border-radius: 5px;
   text-align: center
+}
+.error-user {
+  background-color: var(--error-color-red)
+}
+.error-API {
+  background-color: var(--error-color-orange)
 }
 
 @keyframes smoothShow {
@@ -203,21 +209,9 @@ p.bounce {
     opacity: 1;
   }
 }
-/* @keyframes smoothHide {
-  from {
-    opacity: 1;
-  }
 
-  to {
-    opacity: 0;
-  }
-} */
-
+/* ajouter la classe en js */
 .show-error {
-  animation: smoothShow 1s ease;
-  display: block
+  display: block;
+  animation: smoothShow 1s ease
 }
-
-/* .hide-error {
-  animation: smoothHide 1s ease;
-} */

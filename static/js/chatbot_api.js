@@ -1,50 +1,54 @@
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
 function sendMessage() {
-    // récupérer l'entrée utilisateur et l'afficher
+    // pour récupérer l'entrée utilisateur et l'afficher
     const message = document.getElementById('userInput').value;
     const responseArea = document.getElementById('responseArea');
-    const errorContainer = document.getElementById('errorContainer');
+    // pour afficher les erreurs
+    const errorUser = document.getElementById('errorUser');
+    const errorAPI = document.getElementById('errorAPI');
 
-    // vider le champ
+    // vider le champ utilisateur
     document.getElementById('userInput').value = '';
 
-
-    // validation du formulaire
-    if (message.length !== 0) {
-
-        errorContainer.classList.remove('show-error');
-        errorContainer.innerHTML = '';
-
-        // errorContainer.classList.add('hide-error');
-        // errorContainer.style.display = 'none';
+    // réinitialiser les containers d'erreurs
+    errorUser.classList.remove('show-error');
+    errorUser.innerHTML = '';
+    errorAPI.classList.remove('show-error');
+    errorAPI.innerHTML = '';
 
 
+    /* si le message envoyé n'est pas vide ou ne contient pas que des espaces (\s => espaces, tabs, new lines) */
+    if (message.length > 0 && !message.replace(/\s/g, '').length == 0) {
         // afficher la requête envoyée
         responseArea.innerHTML += '<p><strong>Vous :</strong> ' + message + '</p>';
-
-        /* envoyer les données du formulaire à la route Flask */
-        fetch('/postData', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: message })
-        })
-
-        /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
-        .then(response => response.json())
-        .then(data => {
-            responseArea.innerHTML += '<p><strong>Chatbot :</strong> ' + data.message + '</p>';    
-        });
-
-    } else {
-        // si le champ était vide
-        errorContainer.classList.add('show-error');
-        // errorContainer.classList.remove('hide-error');
-
-        errorContainer.innerHTML = '<span>Veuillez remplir le champ</span>';
     }
 
+    /* envoyer les données du formulaire à la route Flask */
+    fetch('/postData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: message })
+    })
+
+    /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
+    .then(response => response.json())
+    .then(data => {
+        // affichage en fonction de la réponse de l'API
+        if (data.message === "Message utilisateur vide") {
+            // message envoyé était vide
+            errorUser.classList.add('show-error');
+            errorUser.innerHTML = "<span>Veuillez remplir le champ</span>";
+        }else if(data.message === "Erreur API"){
+            // erreur API
+            errorAPI.classList.add('show-error');
+            errorAPI.innerHTML = "<span>Une erreur s'est produite. Veuillez réessayer plus tard.</span>";
+        }else{
+            // réponse OK
+            responseArea.innerHTML += '<p><strong>Chatbot :</strong> ' + data.message + '</p>';    
+        }
+    });
 }
 
 /* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */

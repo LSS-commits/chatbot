@@ -41,3 +41,10 @@ https://stackoverflow.com/questions/76192496/openai-v1-completions-vs-v1-chat-co
 
 Exemples de prompts ChatGPT : 
 https://github.com/f/awesome-chatgpt-prompts
+
+### VALIDATION ###
+String vide ou ne contenant que des white spaces
+Python
+https://stackoverflow.com/questions/2405292/check-if-string-contains-only-whitespace
+JS
+https://stackoverflow.com/questions/10261986/how-to-detect-string-which-contains-only-spaces
