@@ -7,13 +7,18 @@ class MyModal extends HTMLElement {
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">La vie est "random" 🎲</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Les résultats peuvent être surprenants... 😨</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body" id="modalBodyJoke"></div>
-                        <div class="modal-body" id="modalBodyAdvice"></div>
+                        <div class="modal-body text-center" id="modalBody">
+                            <!-- Messages d'erreur -->
+                            <div class="error-user-img" id="errorUserImg"></div>
+                            <div class="error-API-img" id="errorAPIImg"></div>
+                            <div class="modal-body-text" id="modalBodyText"></div>
+                            <div class="modal-body-img" id="modalBodyImg"></div>
+                        </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
                         </div>
                     </div>
                 </div>
@@ -39,12 +44,20 @@ class MyNav extends HTMLElement {
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-                                <li class="nav-item">
-                                    <!-- Bouton de la modale -->
-                                        <i class="fa-solid fa-robot" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                                <li class="input-area-img" id="imgForm">
+                                    <!-- Formulaire du générateur d'images -->
+                                    <span><strong class="first-letter">G</strong>énérateur d'image par IA</span>
+                                    <input type="text" id="userInputImg" placeholder="Décrivez votre image..." maxlength="60" required>
+                                    <!-- Bouton d'envoi et de la modale -->
+                                    <button id="sendButtonImg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-image" aria-hidden="true"></i></button>
                                 </li>
-                                <li class="nav-item">
-                                    <i class="fa-solid fa-circle-half-stroke"></i>
+                                <li class="nav-item toggle-out" id="btnToggleOut">
+                                    <!-- Bouton pour cacher le formulaire -->
+                                    <i class="fa-solid fa-xmark"></i>
+                                </li>
+                                <li class="nav-item toggle-in" id="btnToggleIn">
+                                    <!-- Bouton d'appel à l'action -->
+                                    <i class="fa-solid fa-robot fa-bounce"></i>
                                 </li>
                             </ul>
                         </div>

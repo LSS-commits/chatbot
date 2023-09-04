@@ -10,6 +10,13 @@ from dotenv import load_dotenv
 import webbrowser
 from threading import Timer
 
+# pour le logging (DEBUG et ERROR) de l'API
+import logging
+
+# Configuration de base du logging (obtenir des infos de debug de l'API)
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 # charger les variables d'environnement
 load_dotenv()
 
@@ -29,75 +36,77 @@ def index():
     return render_template('index.html')
 
 
-# TEST ROUTE
-# @app.route('/app/<text>')
-# def test(text):
-#     return render_template('chatbot.html', txt=text)
+# définition de la route pour le point de terminaison du chatbot, où les demandes POST seront envoyées (soumission du formulaire)
+@app.route('/postDataChatbot', methods=["POST"])
+def postDataChatbot():
+    try:
+        # entrée de l'utilisateur
+        data = request.get_json()
+        userMessage = data['message']
 
-# image= openai.Image.create(
-#   prompt="Chat gris",
-#   n=2,
-#   size="1024x1024"
-# )
-# print(image)
+        # l'entrée utilisateur n'est pas vide ou ne contient pas que des espaces
+        if userMessage != '' and len(userMessage) != 0 and userMessage.isspace() == False:
+            # TODO: donner la possibilité à l'utilisateur de définir role et content du chatbot pour des réponses sur des thématiques spécifiques ?
+            messages = [ {'role': 'system', 'content': 'You are intelligent assistant'}]
 
+            if userMessage:
+                messages.append(
+                    {'role': 'user', 'content': userMessage},
+                )
+                response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo", 
+                    messages=messages,
+                    temperature=0.7
+                )
 
-import logging
+            # réponse de l'API
+            reply = response.choices[0].message.content
+            messages.append(
+                {'role': 'assistant', 'content': reply},
+            )
+            # retourner le message au client (navigateur) pour l'afficher
+            return { 'message': reply }
+        else:
+            # si le champ est vide ou ne contient que des espaces
+            print("Message utilisateur vide")
+            return {'message': "Message utilisateur vide"}
 
-# Configuration de base du logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    except Exception as e:
+        # erreur API
+        logging.error("Une erreur s'est produite: %s", e)
+        return {'message': "Erreur API"}
 
-try:
-    # Ouverture du fichier audio
-    with open("italian.m4a", "rb") as audio_file:
-        logging.info("Fichier audio ouvert avec succès.")
-        
-        # Supposons que vous utilisez une API appelée openai
-        translate = openai.Audio.translate(
-            file = audio_file,
-            model = "whisper-1",
-            prompt="From Italian",
-            response_format="text",
-            language="en",
-        )
+# définition de la route pour le point de terminaison de la génération d'images, où les demandes POST seront envoyées (soumission du formulaire)
+@app.route('/postDataImage', methods=["POST"])
+def postDataImage():
+    try:
+        # entrée de l'utilisateur
+        data = request.get_json()
+        userMessage = data['message']
 
-        logging.info("Réponse obtenue de l'API: %s", translate)
-    
-        print(translate)
-except Exception as e:
-    logging.error("Une erreur s'est produite: %s", e)
+        # l'entrée utilisateur n'est pas vide ou ne contient pas que des espaces
+        if userMessage != '' and len(userMessage) != 0 and userMessage.isspace() == False:
+            if userMessage:
+                image = openai.Image.create(
+                    prompt = userMessage,
+                    n = 1,
+                    size = "256x256"
+                )
 
+            # réponse de l'API
+            replyImg = image.data[0].url
 
+            # retourner le message au client (navigateur) pour l'afficher
+            return { 'image': replyImg }
+        else:
+            # si le champ est vide ou ne contient que des espaces
+            print("Message utilisateur vide")
+            return {'message': "Message utilisateur vide"}
 
-# définition de la route pour le point de terminaison du chatbot où les demandes POST seront envoyées (soumission du formulaire)
-@app.route('/postData', methods=["POST"])
-def postData():
-    # entrée de l'utilisateur
-    # TODO: si le message est vide
-    data = request.get_json()
-    userMessage = data['message']
-
-    # TODO: donner la possibilité à l'utilisateur de définir role et content du chatbot pour des réponses sur des thématiques spécifiques ?
-    messages = [ {'role': 'system', 'content': 'You are intelligent assistant'}]
-
-    if userMessage:
-        messages.append(
-            {'role': 'user', 'content': userMessage},
-        )
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo", 
-            messages=messages,
-            temperature=0.7
-        )
-
-    # réponse de l'API
-    reply = response.choices[0].message.content
-    messages.append(
-        {'role': 'assistant', 'content': reply},
-    )
-    # retourner le message au client (navigateur) pour l'afficher
-    return { 'message': reply }
-    
+    except Exception as e:
+        # erreur API
+        logging.error("Une erreur s'est produite: %s", e)
+        return {'message': "Erreur API"}
 
 # définition de la route d'affichage de l'interface du chatbot
 @app.route('/chatbot')
