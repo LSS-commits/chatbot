@@ -30,13 +30,18 @@ function sendMessageImg() {
     // pour afficher les erreurs
     const errorUserImg = document.getElementById('errorUserImg');
     const errorAPIImg = document.getElementById('errorAPIImg');
+    // pour indiquer comment télécharger l'image
+    const modalBodyDownload = document.getElementById("modalBodyDownload");
 
     // vider le champ utilisateur
     document.getElementById('userInputImg').value = '';
+    modalBodyDownload.innerText = '';
 
     // vider la modale
     responseAreaText.innerHTML = "";
-    imgArea.innerHTML = "";    
+    imgArea.innerHTML = "";   
+    
+
 
     // réinitialiser les containers d'erreurs
     errorUserImg.classList.remove('show-error-img');
@@ -72,6 +77,10 @@ function sendMessageImg() {
                 // réponse OK
                 responseAreaText.innerHTML = `<p><strong>Voici votre "` + imgMessage + `":</strong></p>`;
                 imgArea.innerHTML = `<img class="rounded" src="` + url[0] + `" alt="image générée">`;  
+
+                // pour télécharger l'image
+                modalBodyDownload.innerText = "Clic droit pour sauvegarder l'image";
+
             }
         });
     }else{

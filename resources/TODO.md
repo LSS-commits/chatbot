@@ -32,17 +32,18 @@ JS OK,
 TODO: côté serveur 
 <i class="fa-regular fa-image"></i> + animation beat ou bounce OK
 
-- TODO: permettre de télécharger l'image => 
-https://stackoverflow.com/questions/30694433/how-to-give-browser-save-image-as-option-to-button
+- permettre de télécharger l'image => NOPE, clic droit
 
 - enlever chgt de fond sur btn primary et forcer la couleur sur l'état actif OK
 
-- récupérer code Hilel sur branche lss
-- ajouter loadingDots dans modale
-- check validation clipboard (retirer le console.error)
-- retirer "chatbot :" de la réponse copiée
+- récupérer code Hilel sur branche lss OK
+- ajouter loadingDots dans modale OK
+- check validation clipboard (retirer le console.error) 
+- retirer "chatbot :" de la réponse copiée OK
+
+- ajouter un compteur de caractères sur les champs OK
+
 - placer la responseArea au niveau du début de la nouvelle réponse ++
-- ajouter un compteur de caractères sur les champs ++
 
 
 FIN DU PROJET

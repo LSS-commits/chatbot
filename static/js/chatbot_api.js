@@ -26,7 +26,6 @@ function sendMessage() {
     errorAPI.innerHTML = '';
 
 
-    
     // réinitialiser les containers d'erreurs
     errorUser.classList.remove('show-error');
     errorUser.innerHTML = '';
