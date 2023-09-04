@@ -18,6 +18,13 @@ function toggleFormOut(){
 btnToggleIn.addEventListener("click", toggleFormIn);
 btnToggleOut.addEventListener("click", toggleFormOut);
 
+// modal limite 0/60
+document.getElementById('userInputImg').addEventListener('input', function(e) {
+    console.log("input")
+    var charCount = e.target.value.length;
+    console.log(charCount)
+    document.getElementById('charCount').innerText = `${charCount}/60`;
+});
 
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
 function sendMessageImg() {
@@ -44,6 +51,10 @@ function sendMessageImg() {
     errorAPIImg.classList.remove('show-error-img');
     errorAPIImg.innerHTML = '';
 
+    // Animation d'attente de réponse
+    const loadingDotsImg = document.querySelector('#loadingDotsImg');
+    loadingDotsImg.style.display = "inline-block";
+
     // le message envoyé respecte la limite de 60 caractères
     if (imgMessage.length <= 60){
         /* envoyer les données du formulaire à la route Flask */
@@ -59,6 +70,8 @@ function sendMessageImg() {
         .then(response => response.json())
         .then(data => {
             url = Object.values(data);
+            // cachez l'animation "..."
+            loadingDotsImg.style.display = "none"; 
             // affichage en fonction de la réponse de l'API
             if (url[0] === "Message utilisateur vide") {
                 // message envoyé était vide
@@ -86,4 +99,4 @@ const sendButtonImg = document.getElementById("sendButtonImg");
 
 sendButtonImg.addEventListener("click", sendMessageImg)
 
-// TODO: ajouter loadingDots + bouton télécharger
+// TODO: Limite de caractere a modifier (le cadre bouge)
