@@ -69,7 +69,7 @@ function sendMessage() {
             // incrémenter le compteur pour générer des ids uniques (p et button liés)
             answerNumber += 1;
 
-            responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> ' + data.message + '</p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
+            responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> <span class="messageContent">' + data.message + '</span></p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-clipboard"></i></button>';  
             
             // Remettre le bouton envoyer et enlever l'animation d'attente
             sendButton.style.display="block";
@@ -77,23 +77,26 @@ function sendMessage() {
             
             // pour copier les réponses dans le presse-papiers
             var btnEl = document.getElementById("btnNumber" + answerNumber);
-            var answerEl = document.getElementById("answerNumber" + answerNumber);
-            btnEl.addEventListener('click', function (event) {
-                if (event.target != undefined) {
-                    var copyText = answerEl.innerText;
-                    navigator.clipboard.writeText(copyText)
-                    .then(() => {
-                        btnEl.innerHTML = 'Copié avec succès <i id="clipboardIcon" class="fa-solid fa-clipboard-check"></i>'
-                    })
-                    .catch(err => {
-                        // TODO: faire validation erreur
-                        console.error("Erreur lors de la copie du texte: ", err);
-                    });
-                }
-            })
+            var answerEl = document.getElementById(
+              "answerNumber" + answerNumber
+            );
+            btnEl.addEventListener("click", function (event) {
+              if (event.target != undefined) {
+                var messageContent =
+                  answerEl.querySelector(".messageContent").innerText;
+                navigator.clipboard
+                  .writeText(messageContent)
+                  .then(() => {
+                    btnEl.innerHTML =
+                      'Copié avec succès <i id="clipboardIcon" class="fa-solid fa-clipboard-check"></i>';
+                  })
+                  .catch((err) => {
+                    console.error("Erreur lors de la copie du texte: ", err);
+                  });
+              }
+            });
         }
     });
-    
 }
 
 /* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
