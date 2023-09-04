@@ -98,7 +98,6 @@ function sendMessage() {
             });
         }
     });
-    
 }
 
 /* Pour envoyer le message, clic sur le bouton ou presser la touche Entrée du clavier */
