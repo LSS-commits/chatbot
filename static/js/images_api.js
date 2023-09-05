@@ -18,12 +18,13 @@ function toggleFormOut(){
 btnToggleIn.addEventListener("click", toggleFormIn);
 btnToggleOut.addEventListener("click", toggleFormOut);
 
-// modal limite 0/60
+// container du ompteur de caractères
+const counter = document.getElementById('charCount');
+
+// modale limite 0/60
 document.getElementById('userInputImg').addEventListener('input', function(e) {
-    console.log("input")
     var charCount = e.target.value.length;
-    console.log(charCount)
-    document.getElementById('charCount').innerText = `${charCount}/60`;
+    counter.innerText = `${charCount}/60`;
 });
 
 /* Pour gérer le traitement des données envoyées et reçues du chatbot */
@@ -38,13 +39,21 @@ function sendMessageImg() {
     const errorUserImg = document.getElementById('errorUserImg');
     const errorAPIImg = document.getElementById('errorAPIImg');
 
+    // pour indiquer comment télécharger l'image
+    const modalBodyDownload = document.getElementById("modalBodyDownload");
+    
     // vider le champ utilisateur
     document.getElementById('userInputImg').value = '';
+    // réinitialiser le compteur
+    counter.innerText = "0/60";
+    
+    // vider l'élément
+    modalBodyDownload.innerText = '';
 
     // vider la modale
     responseAreaText.innerHTML = "";
-    imgArea.innerHTML = "";    
-
+    imgArea.innerHTML = ""; 
+    
     // réinitialiser les containers d'erreurs
     errorUserImg.classList.remove('show-error-img');
     errorUserImg.innerHTML = '';
@@ -85,6 +94,10 @@ function sendMessageImg() {
                 // réponse OK
                 responseAreaText.innerHTML = `<p><strong>Voici votre "` + imgMessage + `":</strong></p>`;
                 imgArea.innerHTML = `<img class="rounded" src="` + url[0] + `" alt="image générée">`;  
+
+                // pour télécharger l'image
+                modalBodyDownload.innerText = "Clic droit pour sauvegarder l'image";
+
             }
         });
     }else{
@@ -96,7 +109,4 @@ function sendMessageImg() {
 
 /* Pour envoyer le message, clic sur le bouton */
 const sendButtonImg = document.getElementById("sendButtonImg");
-
 sendButtonImg.addEventListener("click", sendMessageImg)
-
-// TODO: Limite de caractere a modifier (le cadre bouge)
