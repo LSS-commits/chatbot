@@ -6,9 +6,14 @@ Chatbot est une application web utilisant Flask en Python 3 et l’API OpenAI.
 
 ### Visuel
 
-![Preview app](https://github.com/LSS-commits/chatbot/blob/main/video_chatbot.mp4?raw=true)
+Accueil
+https://github.com/LSS-commits/chatbot/assets/78922125/afe69ab3-f327-41c1-af41-456fc0863cdd
 
-- TODO: ajouter l'image à la racine du projet
+Chatbot
+https://github.com/LSS-commits/chatbot/assets/78922125/7ff66dde-64ce-48cd-8931-a73cdefe3a29
+
+Générateur d'images
+https://github.com/LSS-commits/chatbot/assets/78922125/bc6ebfd2-2fd8-4085-9a8a-424d791910d1
 
 ### Fonctionnalités 
 
@@ -49,8 +54,8 @@ Lancer l'éxécution du fichier app.py (à la racine du projet) pour lancer le s
 - Possibilité de transcrire un prompt audio en prompt textuel pour le chatbot
 
 ## 🤝🏻 Auteurs / Contributeurs
-[<img src="https://github.com/{{ LSS-commits }}.png" width="60px;"/><br /><sub><ahref="https://github.com/{{ LSS-commits }}">{{ LSS-commits }}</a></sub>](https://github.com/{{ LSS-commits }}
+[<img src="https://github.com/LSS-commits.png" width="60px;"/><br /><sub><ahref="https://github.com/{{ LSS-commits }}">LSS-commits</a></sub>](https://github.com/LSS-commits)
 
-[<img src="https://github.com/{{ Hiloul }}.png" width="60px;"/><br /><sub><ahref="https://github.com/{{ Hiloul }}">{{ Hiloul }}</a></sub>](https://github.com/{{ Hiloul }}
+[<img src="https://github.com/Hiloul.png" width="60px;"/><br /><sub><ahref="https://github.com/Hiloul">Hiloul</a></sub>](https://github.com/Hiloul)
 
 Si vous souhaitez effectuer des changements majeurs, merci d'ouvrir une discussion concernant les problèmes rencontrés (Issues) afin d'échanger sur les possibles améliorations. 
