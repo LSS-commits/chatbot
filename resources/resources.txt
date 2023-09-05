@@ -78,3 +78,6 @@ https://markdownlivepreview.com/
 
 Ajouter une licence au repo : 
 https://docs.github.com/fr/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository
+
+Insérer une vidéo dans un readme : 
+https://www.geeksforgeeks.org/how-to-add-videos-on-readme-md-file-in-a-github-repository/
