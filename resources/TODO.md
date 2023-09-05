@@ -46,7 +46,7 @@ https://stackoverflow.com/questions/30694433/how-to-give-browser-save-image-as-o
 
 
 FIN DU PROJET
-- séparer les fonctions dans des fichiers modules pour plus de clarté
+- séparer les fonctions dans des fichiers modules pour plus de clarté ++
 - nettoyer le projet des fichiers inutiles
 - compléter le README
 
