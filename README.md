@@ -6,8 +6,7 @@ Chatbot est une application web utilisant Flask en Python 3 et l’API OpenAI.
 
 ### Visuel
 
-![Preview app](https://github.com/LSS-commits/chatbot/blob/main/Giftest.GIF)
-
+![Preview app](https://github.com/LSS-commits/chatbot/blob/main/preview.GIF)
 
 ### Fonctionnalités 
 
