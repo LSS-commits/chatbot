@@ -4,14 +4,11 @@
 /*** GENERAL ***/
 :root {
     --background-color: #ededed;
-    /* OU #e6e6e6 OU #fefefe */
     --text-color: #171717;
-    /* OU #0f0f0f */
     --primary-color: #cfcfcf;
     --secondary-color: #e277cd;
-    --gradient-color: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
-    --box-shadow: rgba(23, 23, 23, 0.35) 0px 10px 20px;
-    --box-shadow-secondary: rgba(226, 119, 205, 0.35) 0px 10px 20px;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --border-color: rgba(226, 119, 205, 0.435);
     --error-color-red: rgba(255, 0, 77, 0.468);
     --error-color-orange: rgba(255, 115, 0, 0.468)
 }
@@ -57,21 +54,23 @@ a {
 }
 
 /*** BARRE DE NAVIGATION ***/
-.navbar {
-    background-color: var(--text-color);
-    box-shadow: var(--box-shadow)
-}
 
 /* logo et bouton toggle restent alignés sur tous les écrans */
 .navbar .nav-logo {
     min-width: 40px;
     max-width: 70px;
-    border-radius: 5px
+    border-radius: 5px;
+    box-shadow: var(--box-shadow)
 }
 
 .navbar .navbar-toggler {
-    background-color: var(--secondary-color);
-    color: var(--text-color)
+    border: none;
+    box-shadow: var(--box-shadow);
+    padding: 8px;
+    /* avec ou sans background */
+    background-color: #f8f9fa;
+    color: var(--secondary-color);
+    font-size: 1.5rem
 }
 
 .navbar .nav-item {
@@ -85,7 +84,6 @@ a {
 .navbar .nav-item:hover {
     opacity: .8
 }
-
 
 /* générateur d'images */
 .navbar .input-area-img {
@@ -103,21 +101,48 @@ a {
 }
 
 .navbar .input-area-img span {
-    color: #fff;
+    color: var(--text-color);
     font-size: 1rem;
     margin: 0 20px 0 10px
+}
+
+/* container pour placer le compteur dans l'input */
+.navbar .input-area-img .counter-input {
+    position: relative;
+    display: inline-block
 }
 
 .navbar .input-area-img input {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #eee;
-    border-radius: 4px
+    border-radius: 4px;
+    /* pour placer le compteur */
+    width: 100%
+}
+
+/* compteur */
+.navbar .input-area-img .char-count {
+    margin: 0;
+    background: var(--background-color);
+    border: 0;
+    border-radius: 4px;
+    color: var(--text-color);
+    padding: 9px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    /* changer l'opacité en js */
+    opacity: 0
+}
+/* pour mettrel'icône dans le placeholder de l'input */
+.navbar .fontawesome {
+    font-family: 'Montserrat', 'FontAwesome', sans-serif
 }
 
 .navbar .input-area-img input:focus {
     outline: none;
-    border-color: var(--secondary-color)
+    border-color: var(--border-color)
 }
 
 .navbar .input-area-img button {
@@ -127,12 +152,10 @@ a {
     background-color: var(--secondary-color);
     color: #fff;
     border-radius: 4px;
+    box-shadow: var(--box-shadow);
     transition: all .3s
 }
 
-.navbar .input-area-img button i {
-    font-size: 1.5rem
-}
 
 .navbar .input-area-img button:hover {
     opacity: 0.8
