@@ -17,6 +17,7 @@ class MyModal extends HTMLElement {
                             <div class="modal-body-text" id="modalBodyText"></div>
                             <div class="loadingDotsImg" id="loadingDotsImg">...</div>
                             <div class="modal-body-img" id="modalBodyImg"></div>
+                            <div class="modal-body-download my-2" id="modalBodyDownload"></div>  
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>

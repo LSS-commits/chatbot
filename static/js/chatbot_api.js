@@ -83,17 +83,13 @@ function sendMessage() {
             );
             btnEl.addEventListener("click", function (event) {
               if (event.target != undefined) {
-                var messageContent =
-                  answerEl.querySelector(".messageContent").innerText;
+                var messageContent = answerEl.querySelector(".messageContent").innerText;
                 navigator.clipboard
                   .writeText(messageContent)
                   .then(() => {
                     btnEl.innerHTML =
                       'Copié avec succès <i id="clipboardIcon" class="fa-solid fa-clipboard-check"></i>';
                   })
-                  .catch((err) => {
-                    console.error("Erreur lors de la copie du texte: ", err);
-                  });
               }
             });
         }
