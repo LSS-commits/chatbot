@@ -11,6 +11,12 @@
   .navbar .input-area-img button {
     margin: 10px 0
   }
+
+  /* positionner le compteur dans l'input */
+  .navbar .input-area-img .char-count {
+    top: 12px
+  }
+
 }
 
 /* Ecrans tablette */
