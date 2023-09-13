@@ -27,12 +27,6 @@ function sendMessage() {
     errorAPI.classList.remove('show-error');
     errorAPI.innerHTML = '';
 
-    // réinitialiser les containers d'erreurs
-    errorUser.classList.remove('show-error');
-    errorUser.innerHTML = '';
-    errorAPI.classList.remove('show-error');
-    errorAPI.innerHTML = '';
-
     /* si le message envoyé n'est pas vide ou ne contient pas que des espaces (\s => espaces, tabs, new lines) */
     if (message.length > 0 && !message.replace(/\s/g, '').length == 0) {
         // question ok

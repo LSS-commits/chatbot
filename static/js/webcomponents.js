@@ -48,7 +48,7 @@ class MyNav extends HTMLElement {
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                                 <li class="input-area-img" id="imgForm">
                                     <!-- Formulaire du générateur d'images -->
-                                    <span><strong class="first-letter">G</strong>énérateur d'image par IA</span>
+                                    <span><strong class="first-letter">G</strong>énérateur d'images par IA</span>
                                     <div class="counter-input">
                                         <input type="text" id="userInputImg" class="fontawesome" placeholder="Décrivez votre image &#xf03e;" maxlength="60" required>
                                         <span id="charCount" class="char-count">0/60</span>
