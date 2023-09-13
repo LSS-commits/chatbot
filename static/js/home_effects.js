@@ -5,7 +5,7 @@ const splitText = text.split("");
 const containerText = document.querySelector(".lead");
 let showLetters = "";
 let counter = 0;
-//RandomSpeed a 50 au lieu de 100 (plus rapide)
+// RandomSpeed à 50 au lieu de 100 (plus rapide)
 let randomSpeed = 50;
 
 function typeEffect() {

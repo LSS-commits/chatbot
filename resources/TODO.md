@@ -47,7 +47,7 @@ TODO: côté serveur
 
 
 FIN DU PROJET
-- séparer les fonctions dans des fichiers modules pour plus de clarté
+- séparer les fonctions dans des fichiers modules pour plus de clarté ++
 - nettoyer le projet des fichiers inutiles
 - compléter le README
 

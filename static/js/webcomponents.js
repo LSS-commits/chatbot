@@ -34,7 +34,7 @@ class MyNav extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <header>
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg shadow-sm p-2 mb-5 bg-body-tertiary rounded">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="/">
                             <img src="/static/assets/picto_rose.png" alt="logo chatbot navbar" class="nav-logo">
@@ -49,10 +49,12 @@ class MyNav extends HTMLElement {
                                 <li class="input-area-img" id="imgForm">
                                     <!-- Formulaire du générateur d'images -->
                                     <span><strong class="first-letter">G</strong>énérateur d'image par IA</span>
-                                    <input type="text" id="userInputImg" placeholder="Décrivez votre image..." maxlength="60" required>
-                                    <span id="charCount">0/60</span>
+                                    <div class="counter-input">
+                                        <input type="text" id="userInputImg" class="fontawesome" placeholder="Décrivez votre image &#xf03e;" maxlength="60" required>
+                                        <span id="charCount" class="char-count">0/60</span>
+                                    </div>
                                     <!-- Bouton d'envoi et de la modale -->
-                                    <button id="sendButtonImg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-image" aria-hidden="true"></i></button>
+                                    <button id="sendButtonImg" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                 </li>
                                 <li class="nav-item toggle-out" id="btnToggleOut">
                                     <!-- Bouton pour cacher le formulaire -->
@@ -81,8 +83,7 @@ class MyFooter extends HTMLElement {
                 <a href="/" class="mb-3 me-2 mb-md-0 text-decoration-none lh-1 footerLogo">
                     <img src="/static/assets/picto_rose.png" alt="logo chatbot footer" width="30" height="24" class="rounded">
                 </a>
-                <span class="mb-3 mb-md-0">©2023 Chatbot by LSS&Hiloul - Tous droits réservés.</span>
-                
+                <span class="mb-3 mb-md-0">©2023 Chatbot by LSS&Hiloul - Tous droits réservés.</span>               
                 <ul class="mb-3 mb-md-0">
                     <li><a class=" href="#"><i class="fa-brands fa-discord"></i></a></li>
                     <li><a class=" href="#"><i class="fa-brands fa-github"></i></a></li>
