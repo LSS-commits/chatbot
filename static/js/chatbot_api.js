@@ -27,12 +27,6 @@ function sendMessage() {
     errorAPI.classList.remove('show-error');
     errorAPI.innerHTML = '';
 
-    // réinitialiser les containers d'erreurs
-    errorUser.classList.remove('show-error');
-    errorUser.innerHTML = '';
-    errorAPI.classList.remove('show-error');
-    errorAPI.innerHTML = '';
-
     /* si le message envoyé n'est pas vide ou ne contient pas que des espaces (\s => espaces, tabs, new lines) */
     if (message.length > 0 && !message.replace(/\s/g, '').length == 0) {
         // question ok
@@ -81,7 +75,7 @@ function sendMessage() {
             // incrémenter le compteur pour générer des ids uniques (p et button liés)
             answerNumber += 1;
 
-            responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot:</strong> <span class="messageContent">' + data.message + '</span></p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-copy"></i></button>';  
+            responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot :</strong> <span class="messageContent">' + data.message + '</span></p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-copy"></i></button>';  
             
             // Remettre le bouton envoyer et enlever l'animation d'attente
             sendButton.style.display="block";

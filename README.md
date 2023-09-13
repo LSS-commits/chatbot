@@ -44,7 +44,8 @@ Lancer l'éxécution du fichier app.py (à la racine du projet) pour lancer le s
 
 - Inscription et authentification des utilisateurs
 - Création de l'historique des conversations
-- Possibilité de transcrire un prompt audio en prompt textuel pour le chatbot
+- Possibilité de transcrire un prompt audio en prompt textuel pour le chatbot 
+- Possibilité pour l'utilisateur de choisir un rôle pour le chatbot afin d'avoir des réponses sur des thèmes spécifiques
 
 ## 🤝🏻 Auteurs / Contributeurs
 [<img src="https://github.com/LSS-commits.png" width="60px;"/>](https://github.com/LSS-commits)

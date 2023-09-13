@@ -9,6 +9,7 @@ function sendMessageImg() {
     // pour afficher les erreurs
     const errorUserImg = document.getElementById('errorUserImg');
     const errorAPIImg = document.getElementById('errorAPIImg');
+
     // pour indiquer comment télécharger l'image
     const modalBodyDownload = document.getElementById("modalBodyDownload");
 
@@ -44,13 +45,14 @@ function sendMessageImg() {
             },
             body: JSON.stringify({ message: imgMessage })
         })
-
         /* récupérer la réponse de l'API depuis l'endpoint et mettre à jour le HTML avec les résultats */
         .then(response => response.json())
         .then(data => {
+            // accéder à l'url
             url = Object.values(data);
-            // cachez l'animation "..."
+            // cacher l'animation d'attente "..."
             loadingDotsImg.style.display = "none"; 
+
             // affichage en fonction de la réponse de l'API
             if (url[0] === "Message utilisateur vide") {
                 // message envoyé était vide
@@ -68,10 +70,8 @@ function sendMessageImg() {
                 // pour télécharger l'image
                 modalBodyDownload.innerText = "Clic droit pour sauvegarder l'image";
 
-
                 // pour télécharger l'image
                 modalBodyDownload.innerText = "Clic droit pour sauvegarder l'image";
-
             }
         });
     }else{

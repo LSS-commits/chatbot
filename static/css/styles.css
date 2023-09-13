@@ -13,7 +13,7 @@
     --error-color-orange: rgba(255, 115, 0, 0.468)
 }
 
-/* impossible de sélectionner le texte de l'élément et celui de ses descendants. */
+/* impossibilité de sélectionner le texte de l'élément et celui de ses descendants. */
 * {
     user-select: none;
     -moz-user-select: none;
@@ -121,7 +121,7 @@ a {
     width: 100%
 }
 
-/* compteur */
+/* compteur de caractères */
 .navbar .input-area-img .char-count {
     margin: 0;
     background: var(--background-color);
@@ -135,7 +135,8 @@ a {
     /* changer l'opacité en js */
     opacity: 0
 }
-/* pour mettrel'icône dans le placeholder de l'input */
+
+/* pour mettre l'icône dans le placeholder de l'input */
 .navbar .fontawesome {
     font-family: 'Montserrat', 'FontAwesome', sans-serif
 }
@@ -156,38 +157,43 @@ a {
     transition: all .3s
 }
 
-
 .navbar .input-area-img button:hover {
     opacity: 0.8
 }
 
-/* Modal style animation "..." */
+/* animation d'attente de la modale "..." */
 @keyframes loadingDotsImg {
+
     0%,
     100% {
-      color: rgba(0, 0, 0, 0)
+        color: rgba(0, 0, 0, 0)
     }
+
     20% {
-      color: rgb(255, 192, 223)
-      /* Rose clair */
+        color: rgb(255, 192, 223)
+            /* Rose clair */
     }
+
     40% {
-      color: rgba(0, 0, 0, 0)
+        color: rgba(0, 0, 0, 0)
     }
+
     60% {
-      color: rgba(0, 0, 0, 0)
+        color: rgba(0, 0, 0, 0)
     }
+
     80% {
-      color: rgba(0, 0, 0, 0)
+        color: rgba(0, 0, 0, 0)
     }
-  }
-  .loadingDotsImg {
+}
+
+.loadingDotsImg {
     display: none;
     font-size: 3rem;
     content: "...";
     animation: loadingDotsImg 1.5s infinite;
     margin-left: 5px
-  }
+}
 
 /* Messages d'erreur */
 .error-user-img,
@@ -278,6 +284,7 @@ footer ul a:hover {
         opacity: 1;
     }
 }
+
 .cursor {
     background-color: var(--secondary-color);
     width: 20px;
@@ -292,3 +299,17 @@ footer ul a:hover {
     /* Ombre rose tout autour */
 }
 
+/* pour afficher les autres éléments en fade in une fois le texte complètement affiché */
+@keyframes fadeInHome {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.fadeInAnimation {
+    animation: fadeInHome 1s ease
+}

@@ -48,7 +48,7 @@ class MyNav extends HTMLElement {
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                                 <li class="input-area-img" id="imgForm">
                                     <!-- Formulaire du générateur d'images -->
-                                    <span><strong class="first-letter">G</strong>énérateur d'image par IA</span>
+                                    <span><strong class="first-letter">G</strong>énérateur d'images par IA</span>
                                     <div class="counter-input">
                                         <input type="text" id="userInputImg" class="fontawesome" placeholder="Décrivez votre image &#xf03e;" maxlength="60" required>
                                         <span id="charCount" class="char-count">0/60</span>
@@ -78,7 +78,7 @@ class MyNav extends HTMLElement {
 class MyFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <div class="container">
+        <div class="container custom-footer">
             <footer class="py-3 mt-4 mb-2">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-decoration-none lh-1 footerLogo">
                     <img src="/static/assets/picto_rose.png" alt="logo chatbot footer" width="30" height="24" class="rounded">

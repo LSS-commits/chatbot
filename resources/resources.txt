@@ -11,7 +11,7 @@ Web components (le code doit rester simple et maintenable pour assurer la compat
 Bootswatch (thèmes pour Bootstrap, compatibles avec version 5 mais beaucoup de bugs non résolus) :
 https://bootswatch.com/
 
-v5 => https://github.com/thomaspark/bootswatch
+Bootswatch v5 => https://github.com/thomaspark/bootswatch
 
 Ajouter un élément à l'intérieur d'un input :
 https://stackoverflow.com/questions/69313378/button-inside-input-html-css
@@ -46,7 +46,6 @@ https://github.com/e1ven/Robohash
 ### Flask ###
 Tuto exemple de Chatbot avec Python et Flask : 
 https://medium.com/@mailsushmita.m/create-an-generative-ai-chatbot-using-python-and-flask-a-step-by-step-guide-ea39439cf9ed
-
 
 Exemple d'architecture de projet : https://github.com/shoryamalani/templates/blob/master/flask/flask-normal/app.py
 
