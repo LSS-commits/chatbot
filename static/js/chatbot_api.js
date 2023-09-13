@@ -48,6 +48,9 @@ function sendMessage() {
         // remplacer le bouton envoyer par l'animation d'attente
         sendButton.style.display="none";
         loadingDots.style.display="block";
+
+        // désactiver l'input
+        userInput.disabled = true;
     }
 
     /* envoyer les données du formulaire à la route Flask */
@@ -78,8 +81,11 @@ function sendMessage() {
             responseArea.innerHTML += '<p id="answerNumber'+ answerNumber +'" class="chatbotAnswer"><strong>Chatbot :</strong> <span class="messageContent">' + data.message + '</span></p><button class="btnCopy" id="btnNumber'+ answerNumber +'"><i id="clipboardIcon" class="fa-regular fa-copy"></i></button>';  
             
             // Remettre le bouton envoyer et enlever l'animation d'attente
-            sendButton.style.display="block";
-            loadingDots.style.display="none";
+            sendButton.style.display = "block";
+            loadingDots.style.display = "none";
+            // ré-activer l'input
+            userInput.disabled = false;
+
             
             // pour copier les réponses dans le presse-papiers
             var btnEl = document.getElementById("btnNumber" + answerNumber);
