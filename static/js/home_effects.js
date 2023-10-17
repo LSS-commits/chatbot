@@ -12,7 +12,7 @@ const splitText = text.split("");
 let showLetters = "";
 let counter = 0;
 // randomSpeed (10 rapide => 100 lent)
-let randomSpeed = 35;
+let randomSpeed = 25;
 
 function typeEffect() {
   // seul le texte est affiché
